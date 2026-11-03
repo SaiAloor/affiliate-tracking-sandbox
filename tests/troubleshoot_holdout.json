@@ -1,0 +1,14 @@
+[
+  {"expect": "auth_error", "text": "We switched hosting providers and now the backend gets an access denied response from your API."},
+  {"expect": "amount_in_cents", "text": "{\"click_id\": \"clk_9x8y7z6w5v\", \"order_id\": \"B-220\", \"amount\": \"12999\", \"currency\": \"USD\"}"},
+  {"expect": "amount_in_cents", "text": "Your numbers show our average order is $6,500. It's actually $65."},
+  {"expect": "duplicate_fire", "text": "Partner X says their report counts one purchase three times when the buyer hits back in the browser."},
+  {"expect": "refund_not_reversed", "text": "If a customer sends something back, what do we need to call so the partner doesn't keep the commission?"},
+  {"expect": "currency_mismatch", "text": "The UK site sends pounds but your dashboard says USD."},
+  {"expect": "click_id_lost", "text": "We moved checkout to a subdomain and since then almost nothing is attributed."},
+  {"expect": "conversion_missing", "text": "Roughly 9% of partner sales go missing, mostly from people using Brave and Firefox."},
+  {"expect": "test_order", "text": "Can you delete the orders our developers placed while setting this up?"},
+  {"expect": "late_conversion", "text": "Why was a sale rejected when the shopper clicked the link on May 1 and ordered June 12?"},
+  {"expect": "validation_error", "text": "{\"click_id\": \"clk_9x8y7z6w5v\", \"order_id\": \"B-221\", \"amount\": -15.00, \"currency\": \"USD\"}"},
+  {"expect": "validation_error", "text": "{\"error\": {\"code\": \"invalid_json\"}}"}
+]
