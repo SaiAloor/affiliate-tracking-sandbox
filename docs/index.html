@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Affiliate Tracking Sandbox</title>
+<meta name="description" content="Click a partner link, buy something, and watch how an affiliate sale is tracked. Break the integration on purpose, then find and fix the problem.">
+<style>
+:root{--bg:#f5f6f8;--panel:#fff;--fg:#1c2230;--muted:#667085;--line:#e3e6eb;--soft:#eef1f5;--accent:#1f5fae;--ok:#11815f;--bad:#c4321f;--warn:#a86400;--code:#f3f5f8;--chip:#e9eef6}
+@media (prefers-color-scheme:dark){:root{--bg:#11141a;--panel:#191d25;--fg:#e7e9ee;--muted:#9aa3b1;--line:#2a303b;--soft:#202632;--accent:#6ea2e8;--ok:#3cc493;--bad:#f07a6a;--warn:#f0b057;--code:#151920;--chip:#243046;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:1140px;margin:0 auto;padding:28px max(16px,env(safe-area-inset-right)) 56px max(16px,env(safe-area-inset-left))}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:10px;margin-bottom:6px}
+h1{font-size:26px;margin:0} h2{font-size:17px;margin:0 0 4px} h3{font-size:14px;margin:0 0 6px}
+.sub{color:var(--muted);margin:4px 0 0;max-width:72ch}
+nav a{color:var(--accent);text-decoration:none;font-size:14px;margin-left:14px} nav a:hover{text-decoration:underline}
+.note{color:var(--muted);font-size:13px;margin:0 0 10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px;min-width:0}
+section{margin-top:18px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
+.step{border:1px solid var(--line);border-radius:10px;padding:14px;background:var(--panel);display:flex;flex-direction:column;gap:8px}
+.step .n{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.url{font:12.5px ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--code);border:1px solid var(--line);border-radius:6px;padding:6px 8px;word-break:break-all}
+.url b{color:var(--ok)} .url s{color:var(--bad)}
+button{font:inherit;font-size:14px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--fg);padding:7px 13px;cursor:pointer}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button:disabled{opacity:.45;cursor:not-allowed}
+button:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+select,textarea{font:inherit;font-size:14px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--fg);padding:6px 9px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.product{display:flex;gap:12px;align-items:center}
+.swatch{width:54px;height:54px;border-radius:8px;background:linear-gradient(135deg,#3f7d5b,#2c5a41);flex:none}
+.saved{font-size:13px}
+.ok{color:var(--ok)} .bad{color:var(--bad)} .warn{color:var(--warn)}
+.toggles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:8px 18px;margin-top:6px}
+.toggles label{display:flex;gap:8px;align-items:flex-start;font-size:14px;cursor:pointer}
+.toggles input{margin-top:3px}
+.toggles small{display:block;color:var(--muted);font-size:12px}
+.log{display:flex;flex-direction:column;gap:8px;max-height:420px;overflow:auto}
+.ev{border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px}
+.ev .h{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.ev pre{margin:6px 0 0;font:12px ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--code);border-radius:6px;padding:6px 8px;white-space:pre-wrap;word-break:break-word}
+.pill{display:inline-block;font-size:12px;border-radius:999px;padding:1px 8px;background:var(--soft);white-space:nowrap}
+.pill.ok{color:var(--ok)} .pill.bad{color:var(--bad)} .pill.warn{color:var(--warn)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:18px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:500}
+td.n,th.n{text-align:right;white-space:nowrap}
+.empty{color:var(--muted);font-size:14px;padding:6px 0}
+.finding{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:8px;padding:10px 12px;margin-top:10px}
+.finding.info{border-left-color:var(--muted)}
+.finding p{margin:4px 0;font-size:14px}
+.finding .k{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.chips button{font-size:12.5px;padding:4px 10px;border-radius:999px;background:var(--chip);border-color:transparent}
+textarea{width:100%;min-height:96px;resize:vertical;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px}
+.reply{background:var(--soft);border-radius:8px;padding:10px 12px;font-size:14px}
+footer{color:var(--muted);font-size:13px;margin-top:34px}
+footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div>
+    <h1>Affiliate Tracking Sandbox</h1>
+    <p class="sub">Click a partner's link, buy something, and watch how the sale gets credited to that partner. Then break the integration on purpose and use the health check and troubleshooter to find what went wrong.</p>
+  </div>
+  <nav><a href="guide.html">Integration guide</a><a href="https://github.com/SaiAloor/affiliate-tracking-sandbox">Code on GitHub</a></nav>
+</header>
+<p class="note">Everything here is fictional: Juniper Supply Co. is a made-up store and the Sandbox Partner Platform is a made-up tracking platform. It all runs in your browser.</p>
+
+<section class="card">
+  <h2>1. Make a purchase</h2>
+  <p class="note">Follow the three steps from left to right. Each request the store sends to the platform appears in the log below.</p>
+  <div class="steps">
+    <div class="step">
+      <span class="n">Step 1 · Partner's website</span>
+      <h3>"The 5 best daypacks of 2026"</h3>
+      <div class="row"><label for="partner" class="note" style="margin:0">Partner</label>
+        <select id="partner"><option>trail-blog</option><option>coupon-hub</option><option>gearlist</option><option>summit-stories</option></select></div>
+      <button class="primary" id="clickBtn">Click "Shop the Juniper Daypack"</button>
+      <div id="clickOut" class="note" style="margin:0">The platform records the click and sends the shopper to the store with a click ID.</div>
+    </div>
+    <div class="step">
+      <span class="n">Step 2 · Store</span>
+      <div class="product"><div class="swatch" aria-hidden="true"></div><div><b>Juniper Daypack 22L</b><div class="note" style="margin:0" id="price">$84.50</div></div></div>
+      <div class="row"><label for="store" class="note" style="margin:0">Store</label>
+        <select id="store"><option value="US">United States (USD)</option><option value="CA">Canada (CAD)</option></select></div>
+      <div id="savedClick" class="saved note" style="margin:0">No click ID saved yet.</div>
+      <button class="primary" id="buyBtn">Place order</button>
+    </div>
+    <div class="step">
+      <span class="n">Step 3 · After the order</span>
+      <div id="orderOut" class="note" style="margin:0">The confirmation page reports the sale to the platform.</div>
+      <div class="row">
+        <button id="reloadBtn" disabled>Reload confirmation page</button>
+        <button id="refundBtn" disabled>Refund this order</button>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:18px">Break the integration</h3>
+  <p class="note">Each switch recreates a mistake new clients often make. Turn one on, make a purchase, then run the health check.</p>
+  <div class="toggles">
+    <label><input type="checkbox" id="tRedirect"><span>Mobile redirect drops the click ID<small>The store sends phones to a /m/ page and loses ?clickid.</small></span></label>
+    <label><input type="checkbox" id="tCents"><span>Send the amount in cents<small>8450 instead of 84.50.</small></span></label>
+    <label><input type="checkbox" id="tUsd"><span>Hard-code USD<small>The tag always says USD, even in the Canadian store.</small></span></label>
+    <label><input type="checkbox" id="tBlocked"><span>Shopper has an ad blocker<small>The browser tag never fires.</small></span></label>
+    <label><input type="checkbox" id="tS2S"><span>Add server-to-server reporting<small>The store's backend also calls the API with its key. This is the fix for ad blockers.</small></span></label>
+    <label><input type="checkbox" id="tReportRefund" checked><span>Report refunds to the platform<small>Turn off to forget the reversal call.</small></span></label>
+  </div>
+</section>
+
+<section class="grid2">
+  <div class="card">
+    <h2>Requests to the platform</h2>
+    <p class="note">What the store sent and what the API answered.</p>
+    <div class="log" id="log"><div class="empty">No requests yet. Start with step 1.</div></div>
+  </div>
+  <div class="card">
+    <h2>What the platform recorded</h2>
+    <p class="note">Sales credited to partners in this session.</p>
+    <div class="scroll" id="platformTable"><div class="empty">Nothing recorded yet.</div></div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>2. Run the health check</h2>
+  <p class="note">Compares the store's orders with what the platform received, then explains each gap and how to fix it.</p>
+  <div class="row"><button class="primary" id="hcSession">Check my purchases</button><button id="hcSample">Check a sample month (1,502 orders)</button></div>
+  <div id="hcOut"></div>
+</section>
+
+<section class="card">
+  <h2>3. Troubleshoot a client's message</h2>
+  <p class="note">Paste an error the API returned, the request a client sent, or what they wrote in an email. Try an example:</p>
+  <div class="chips" id="chips"></div>
+  <textarea id="tsIn" aria-label="Client message, error or request"></textarea>
+  <div class="row" style="margin-top:8px"><button class="primary" id="tsBtn">Diagnose</button></div>
+  <div id="tsOut"></div>
+</section>
+
+<footer>Built by Sai Soumya Aloor. The same rules run in Python with a REST API server, 31 tests and a parity test that keeps this page in line with the Python results. <a href="https://github.com/SaiAloor/affiliate-tracking-sandbox">See the code</a>.</footer>
+</main>
+
+<script src="engine.js"></script>
+<script>
+(async function () {
+  "use strict";
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const [contract, playbook, rules] = await Promise.all(["contract.json", "playbook.json", "rules.json"].map(f => fetch(f).then(r => r.json())));
+  Sandbox.init(contract, playbook, rules);
+
+  const platform = new Sandbox.Platform();
+  const orders = [];
+  let savedClick = "", lastOrder = null, n = 2000;
+  const PRICE = { US: ["USD", 84.50], CA: ["CAD", 115.00] };
+  const fmtMoney = (v, c = "USD") => (c === "USD" ? "$" : c + " ") + Number(v).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+  // ---------- log ----------
+  const log = [];
+  function addLog(label, request, status, body) {
+    log.unshift({ label, request, status, body, t: new Date().toLocaleTimeString() });
+    $("log").innerHTML = log.map(e => {
+      const cls = e.status >= 400 || e.status === 0 ? "bad" : e.body && e.body.status === "duplicate" ? "warn" : "ok";
+      const word = e.status === 0 ? "not sent" : e.status >= 400 ? `${e.status} ${e.body.error.code}` : `${e.status} ${e.body.status}`;
+      return `<div class="ev"><div class="h"><b>${esc(e.label)}</b><span><span class="pill ${cls}">${esc(word)}</span> <span class="note">${e.t}</span></span></div>
+        <pre>${esc(e.request)}</pre><pre>${esc(JSON.stringify(e.body, null, 2))}</pre></div>`;
+    }).join("");
+  }
+  function renderPlatform() {
+    const rows = platform.conversions();
+    $("platformTable").innerHTML = rows.length ? `<table><thead><tr><th>Order</th><th>Partner</th><th class="n">Amount</th><th>Status</th><th class="n">Copies dropped</th></tr></thead><tbody>${
+      rows.map(r => `<tr><td>${esc(r.order_id)}</td><td>${esc(r.partner_id)}</td><td class="n">${esc(fmtMoney(r.amount, r.currency))}</td>
+        <td><span class="pill ${r.status === "approved" ? "ok" : "warn"}">${esc(r.status.replace("_", " "))}</span></td><td class="n">${r.duplicates}</td></tr>`).join("")
+    }</tbody></table>` : `<div class="empty">Nothing recorded yet.</div>`;
+  }
+
+  // ---------- step 1: click ----------
+  $("clickBtn").onclick = () => {
+    const partner = $("partner").value;
+    const id = platform.createClick(partner);
+    const landing = `https://juniper-supply.example/daypack?clickid=${id}`;
+    if ($("tRedirect").checked) {
+      savedClick = "";
+      $("clickOut").innerHTML = `Platform recorded click <b>${id}</b> for <b>${esc(partner)}</b> and sent the shopper to:
+        <div class="url">${landing.replace(id, "<b>" + id + "</b>")}</div>
+        The store redirected the phone to its mobile page, and the click ID was lost:
+        <div class="url">https://juniper-supply.example/m/daypack<s> (no clickid)</s></div>`;
+    } else {
+      savedClick = id;
+      $("clickOut").innerHTML = `Platform recorded click <b>${id}</b> for <b>${esc(partner)}</b> and sent the shopper to:
+        <div class="url">${landing.replace(id, "<b>" + id + "</b>")}</div>`;
+    }
+    $("savedClick").innerHTML = savedClick ? `<span class="ok">Saved click ID in a first-party cookie: <b>${savedClick}</b></span>`
+      : `<span class="bad">No click ID saved. This order won't be credited to a partner.</span>`;
+  };
+
+  // ---------- step 2 and 3: order and reporting ----------
+  $("store").onchange = () => { const [c, p] = PRICE[$("store").value]; $("price").textContent = fmtMoney(p, c); };
+
+  function payloadFor(o) {
+    const cents = $("tCents").checked;
+    return { click_id: o.click_id, order_id: o.order_id, amount: cents ? String(Math.round(o.amount * 100)) : o.amount.toFixed(2),
+             currency: $("tUsd").checked ? "USD" : o.currency };
+  }
+  function sendTag(o) {
+    if ($("tBlocked").checked) { addLog("Browser tag", "Blocked by the shopper's ad blocker. Nothing was sent.", 0, { status: "not sent" }); return; }
+    const p = payloadFor(o);
+    const [status, body] = platform.record(p, "tag");
+    addLog("Browser tag", `GET /v1/tag.gif?${new URLSearchParams(p)}`, status, body);
+  }
+  function sendS2S(o) {
+    if (!$("tS2S").checked) return;
+    const p = payloadFor(o);
+    const [status, body] = platform.record(p, "s2s", Sandbox.LIVE_KEY);
+    addLog("Server to server", `POST /v1/conversions\nAuthorization: Bearer ${Sandbox.LIVE_KEY}\n${JSON.stringify(p, null, 2)}`, status, body);
+  }
+
+  $("buyBtn").onclick = () => {
+    const [currency, amount] = PRICE[$("store").value];
+    const o = { order_id: `JS-${++n}`, currency, amount, click_id: savedClick, partner_traffic: savedClick || $("tRedirect").checked ? "yes" : "no",
+                refunded_amount: "0.00", is_test: "no", store: $("store").value };
+    if (!savedClick && !$("tRedirect").checked) { $("orderOut").innerHTML = `<span class="warn">Click a partner link first (step 1).</span>`; return; }
+    orders.push(o); lastOrder = o;
+    $("orderOut").innerHTML = `Order <b>${o.order_id}</b> placed for ${fmtMoney(amount, currency)}.` +
+      (o.click_id ? " Reporting the sale to the platform…" : ` <span class="bad">No click ID, so there's nothing to report.</span>`);
+    if (o.click_id) { sendTag(o); sendS2S(o); }
+    renderPlatform();
+    $("reloadBtn").disabled = !o.click_id; $("refundBtn").disabled = false;
+    savedClick = ""; $("savedClick").textContent = "Click a partner link again for the next purchase.";
+  };
+  $("reloadBtn").onclick = () => { if (lastOrder) { sendTag(lastOrder); renderPlatform(); } };
+  $("refundBtn").onclick = () => {
+    if (!lastOrder) return;
+    lastOrder.refunded_amount = lastOrder.amount.toFixed(2);
+    $("refundBtn").disabled = true;
+    if ($("tReportRefund").checked && lastOrder.click_id) {
+      const [status, body] = platform.reverse(lastOrder.order_id);
+      addLog("Refund reported", `POST /v1/conversions/${lastOrder.order_id}/reversal\nAuthorization: Bearer ${Sandbox.LIVE_KEY}`, status, body);
+    } else {
+      $("orderOut").innerHTML += `<div class="bad" style="margin-top:6px">Refunded in the store, but the platform wasn't told.</div>`;
+    }
+    renderPlatform();
+  };
+
+  // ---------- health check ----------
+  function renderHealth(ordersIn, conversions, errors, label) {
+    const findings = Sandbox.check(ordersIn, conversions, errors);
+    const summary = Sandbox.summarize(ordersIn, findings);
+    if (!ordersIn.length) { $("hcOut").innerHTML = `<p class="empty">Make a purchase first, or check the sample month.</p>`; return; }
+    if (!summary.length) { $("hcOut").innerHTML = `<p class="ok" style="margin-top:12px">All ${ordersIn.length} orders in ${esc(label)} match what the platform received. No problems found.</p>`; return; }
+    const over = summary.filter(r => r.commission_impact_usd > 0).reduce((s, r) => s + r.commission_impact_usd, 0);
+    const under = -summary.filter(r => r.commission_impact_usd < 0).reduce((s, r) => s + r.commission_impact_usd, 0);
+    const signed = v => Math.abs(v) < 0.5 ? "$0" : (v > 0 ? "+" : "-") + "$" + Math.abs(v).toLocaleString("en-US", { maximumFractionDigits: 0 });
+    const fixes = summary.filter(r => r.needs_fix).length;
+    let html = `<p style="margin-top:12px">Checked ${ordersIn.length.toLocaleString()} orders in ${esc(label)}. <b>${fixes} issue${fixes === 1 ? "" : "s"} need${fixes === 1 ? "s" : ""} a fix.</b>
+      If left as is, partners would be overpaid by about ${signed(over).replace("+", "")} and underpaid by about $${under.toLocaleString("en-US", { maximumFractionDigits: 0 })} in commission.</p>`;
+    html += summary.map(r => {
+      const p = playbook.issues[r.issue];
+      const ex = findings.find(f => f.issue === r.issue);
+      return `<div class="finding ${r.needs_fix ? "" : "info"}"><div class="row" style="justify-content:space-between"><b>${esc(r.title)}</b>
+        <span><span class="pill">${r.orders} order${r.orders === 1 ? "" : "s"}</span> <span class="pill ${r.commission_impact_usd > 0 ? "bad" : r.commission_impact_usd < 0 ? "warn" : ""}">${signed(r.commission_impact_usd)} commission</span></span></div>
+        <p><span class="k">What we see</span><br>${esc(p.symptom)} Example: ${esc(ex.order_id)}, ${esc(ex.detail)}.</p>
+        <p><span class="k">Why</span><br>${esc(p.cause)}</p>
+        <p><span class="k">${r.needs_fix ? "Fix" : "Action"}</span><br>${esc(r.fix)}</p></div>`;
+    }).join("");
+    html += `<p class="note" style="margin-top:10px">Commission is figured at 8% of the sale, in US dollars. Positive means partners would be overpaid; negative means underpaid.</p>`;
+    $("hcOut").innerHTML = html;
+  }
+  $("hcSession").onclick = () => renderHealth(orders, platform.conversions(), platform.errors, "this session");
+  $("hcSample").onclick = async () => {
+    const [o, c, e] = await Promise.all(["store_orders.csv", "platform_conversions.csv", "platform_api_errors.csv"]
+      .map(f => fetch("sample/" + f).then(r => r.text()).then(Sandbox.parseCSV)));
+    renderHealth(o, c, e, "the October sample");
+  };
+
+  // ---------- troubleshooter ----------
+  const EXAMPLES = [
+    ["API error", '{"error": {"code": "invalid_click_id", "field": "click_id"}}'],
+    ["Request sent", '{"click_id": "clk_ab12cd34ef", "order_id": "A-5531", "amount": 8450, "currency": "USD"}'],
+    ["401 email", "Every call to the conversions endpoint comes back with 401. We copied the key from the dashboard."],
+    ["Refunds email", "Orders that were returned still show as approved, so partners are getting paid on them."],
+    ["Missing sales", "Could ad blockers be stopping the tracking? Safari users seem to be missing."],
+  ];
+  $("chips").innerHTML = EXAMPLES.map((e, i) => `<button data-i="${i}">${esc(e[0])}</button>`).join("");
+  $("chips").onclick = ev => { const b = ev.target.closest("button"); if (b) { $("tsIn").value = EXAMPLES[+b.dataset.i][1]; diagnose(); } };
+  function diagnose() {
+    const text = $("tsIn").value.trim();
+    if (!text) { $("tsOut").innerHTML = ""; return; }
+    const res = Sandbox.diagnose(text);
+    if (!res.length) {
+      $("tsOut").innerHTML = `<div class="finding info"><b>No rule matched this message.</b><p>Plain-English messages are where keyword rules fall short: clients describe the same problem in many different ways.
+        In the Python version, <code>--ai</code> sends messages like this to Claude, which picks from the same list of known issues. Here, the next step is to ask the client for the request they sent and the response they got.</p></div>`;
+      return;
+    }
+    const t = res[0];
+    $("tsOut").innerHTML = `<div class="finding"><b>Likely cause: ${esc(t.title)}</b><p class="note" style="margin:2px 0 6px">Because ${esc(t.reason)}.</p>
+      <p><span class="k">How to confirm</span><br>${esc(t.confirm)}</p><p><span class="k">Fix</span><br>${esc(t.fix)}</p>
+      ${res.length > 1 ? `<p class="note">Also possible: ${res.slice(1, 3).map(r => esc(r.title)).join(", ")}</p>` : ""}
+      <p><span class="k">Suggested reply to the client</span></p><div class="reply">${esc(t.reply)}</div></div>`;
+  }
+  $("tsBtn").onclick = diagnose;
+})();
+</script>
+</body>
+</html>

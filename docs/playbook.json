@@ -1,0 +1,85 @@
+{
+  "about": "Common integration problems: how to spot each one, why it happens, how to fix it, and a calm reply to the client. Used by the health check, the troubleshooter and the browser demo.",
+  "issues": {
+    "click_id_lost": {
+      "title": "Click ID lost before checkout",
+      "symptom": "Orders from partner traffic arrive without a click ID, so no partner gets credit.",
+      "cause": "The site redirects shoppers (for example to a mobile or country page) and drops the clickid parameter, or the ID is saved in a way that doesn't survive to checkout.",
+      "confirm": "Open a partner link and watch the address bar. If clickid disappears after a redirect, this is the cause.",
+      "fix": "Keep the clickid parameter on every redirect, and save it in a first-party cookie or local storage on the first page the shopper sees.",
+      "reply": "Thanks for flagging this. It looks like the click ID is being dropped during a redirect before checkout, which is why these orders aren't credited to a partner. The fix is to carry the clickid parameter through every redirect and save it as soon as the shopper lands. I've added the exact steps in the guide, and I'm happy to test it with your team once it's in place."
+    },
+    "amount_in_cents": {
+      "title": "Amount sent in cents",
+      "symptom": "Reported sale amounts are exactly 100 times the real order value, which inflates commissions.",
+      "cause": "The store's checkout stores prices in cents (8450) and sends that number instead of dollars (84.50).",
+      "confirm": "Compare one order in the store with the same order on the platform. If the platform shows 100 times more, this is the cause.",
+      "fix": "Divide the amount by 100 before sending it, so it's in the currency's main unit.",
+      "reply": "Good news: tracking is working, but the amounts are coming through as cents. Order totals on the platform are 100 times the real value, so commissions would be overstated. Dividing the amount by 100 before sending fixes it. Once that's live, we'll correct the affected orders together so partners are paid the right amount."
+    },
+    "duplicate_fire": {
+      "title": "Tag fires more than once",
+      "symptom": "The same order is reported two or more times.",
+      "cause": "The tag sits on a confirmation page that runs again when the shopper refreshes or goes back.",
+      "confirm": "Look for the same order_id arriving twice within a few minutes.",
+      "fix": "Always send the real order_id so the platform can drop duplicates, and fire the tag only once per order.",
+      "reply": "The platform is catching these duplicates because each one carries the same order ID, so nobody is being overpaid. To keep things clean, the tag should fire only once per order, for example by not firing it again when the confirmation page is refreshed."
+    },
+    "currency_mismatch": {
+      "title": "Wrong currency sent",
+      "symptom": "Sales in one currency are reported as another, so commission values are off.",
+      "cause": "The currency is hard-coded as USD instead of being read from the order.",
+      "confirm": "Check orders placed in a non-US store. If they arrive marked USD, this is the cause.",
+      "fix": "Send the order's own currency code on every conversion.",
+      "reply": "Orders from your Canadian store are arriving marked as USD, so their values are slightly overstated. It looks like the currency is fixed in the tag instead of being taken from the order. Passing the order's own currency code fixes it, and I can help check a few test orders afterward."
+    },
+    "refund_not_reversed": {
+      "title": "Refunds not reported",
+      "symptom": "Refunded orders still show as approved sales, so partners keep commission on returns.",
+      "cause": "The integration reports new sales but never calls the reversal endpoint when an order is refunded.",
+      "confirm": "Find a refunded order in the store and check its status on the platform. If it's still approved, this is the cause.",
+      "fix": "Call the reversal endpoint whenever an order is fully or partly refunded.",
+      "reply": "New sales are tracking well. The gap is refunds: when an order is returned, the platform isn't told, so partners keep commission on it. Adding a call to the reversal endpoint in your refund process closes this. I've included a sample request in the guide."
+    },
+    "conversion_missing": {
+      "title": "Sale never reached the platform",
+      "symptom": "Orders with a valid click ID never show up on the platform.",
+      "cause": "The integration relies only on the browser tag, which ad blockers, privacy settings or a closed tab can stop.",
+      "confirm": "If the missing orders cluster on certain browsers or have no error on the platform at all, the tag never fired.",
+      "fix": "Add server-to-server reporting from the store's backend, which doesn't depend on the shopper's browser.",
+      "reply": "About one in ten tracked orders never reaches the platform. That's typical of browser-only tracking, since ad blockers and closed tabs can stop the tag. Adding a server-to-server call from your backend will catch these, and it's a small change. I'm happy to walk your developers through it."
+    },
+    "test_order": {
+      "title": "Test orders sent to production",
+      "symptom": "Internal test orders appear as real sales.",
+      "cause": "The production API key or tag is used during testing.",
+      "confirm": "Look for orders flagged as tests in the store, or test-looking order IDs, among approved conversions.",
+      "fix": "Use the test key while testing, and skip reporting for orders marked as tests.",
+      "reply": "A few internal test orders were reported as real sales. They're easy to remove, and to prevent it going forward, please use the test key during testing and skip reporting for orders marked as tests."
+    },
+    "validation_error": {
+      "title": "Requests rejected by the API",
+      "symptom": "The platform rejected the request with a validation error.",
+      "cause": "A field is missing or in the wrong format.",
+      "confirm": "Read the error code and message returned by the API.",
+      "fix": "Correct the field named in the error and resend.",
+      "reply": "The API rejected these requests because of a formatting problem in one field. The error message names the field, and the guide shows the expected format. Once it's corrected, the requests will go through, and I can confirm on our side."
+    },
+    "auth_error": {
+      "title": "API key problem",
+      "symptom": "Requests are refused with a 401 error.",
+      "cause": "The API key is missing, mistyped, or the test key is being used in production.",
+      "confirm": "Check the Authorization header on a failing request.",
+      "fix": "Send the production key as Authorization: Bearer <key>.",
+      "reply": "The requests are being refused because of the API key. Usually this means the header is missing or the test key is in use. Sending the production key in the Authorization header should fix it right away. If you'd like, I can confirm which key you're using."
+    },
+    "late_conversion": {
+      "title": "Sale outside the lookback window",
+      "symptom": "A sale is rejected because the click is too old.",
+      "cause": "The shopper bought more than 30 days after clicking, which is outside the program's lookback window.",
+      "confirm": "Compare the click date with the order date.",
+      "fix": "Nothing is broken. If the brand wants to credit longer journeys, the lookback window can be changed in the program settings.",
+      "reply": "These sales were rejected because they happened more than 30 days after the shopper's click, which is outside your program's lookback window. The integration is working as designed. If you'd like to credit longer purchase cycles, we can talk about extending the window."
+    }
+  }
+}

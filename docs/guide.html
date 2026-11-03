@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Integration Guide</title>
+<style>
+:root{--bg:#f5f6f8;--panel:#fff;--fg:#1c2230;--muted:#667085;--line:#e3e6eb;--accent:#1f5fae;--code:#f3f5f8;--ok:#11815f;--warn:#a86400}
+@media (prefers-color-scheme:dark){:root{--bg:#11141a;--panel:#191d25;--fg:#e7e9ee;--muted:#9aa3b1;--line:#2a303b;--accent:#6ea2e8;--code:#151920;--ok:#3cc493;--warn:#f0b057;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:820px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-right)) 64px max(16px,env(safe-area-inset-left))}
+h1{font-size:28px;margin:0 0 4px} h2{font-size:20px;margin:36px 0 8px;padding-top:8px;border-top:1px solid var(--line)} h3{font-size:16px;margin:20px 0 6px}
+a{color:var(--accent)}
+.lead{color:var(--muted);margin:0 0 20px}
+code{font:14px ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--code);padding:1px 5px;border-radius:4px}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+pre code{background:none;padding:0}
+table{border-collapse:collapse;width:100%;font-size:15px;margin:8px 0}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:13px;color:var(--muted);font-weight:500}
+.scroll{overflow-x:auto}
+.box{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:10px 14px;margin:12px 0}
+.toc{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 18px}
+.toc ol{margin:6px 0;padding-left:20px}
+ol li,ul li{margin:4px 0}
+.check li{list-style:none;margin-left:-18px} .check li::before{content:"☐ ";color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+<p><a href="index.html">← Back to the sandbox</a></p>
+<h1>Integration Guide</h1>
+<p class="lead">How to report sales to the Sandbox Partner Platform so every partner gets credit for the shoppers they send. Written for the developer setting it up. The platform and the store in the examples are fictional.</p>
+
+<div class="toc"><b>Contents</b>
+<ol>
+<li><a href="#how-it-works">How tracking works</a></li>
+<li><a href="#capture-the-click">Capture the click</a></li>
+<li><a href="#choose-a-method">Choose a method</a></li>
+<li><a href="#server-to-server">Server to server</a></li>
+<li><a href="#browser-tag">Browser tag</a></li>
+<li><a href="#fields">Fields</a></li>
+<li><a href="#authentication">Authentication</a></li>
+<li><a href="#refunds">Refunds</a></li>
+<li><a href="#lookback-window">Lookback window</a></li>
+<li><a href="#testing">Testing and going live</a></li>
+<li><a href="#errors">Error codes</a></li>
+</ol></div>
+
+<h2 id="how-it-works">1. How tracking works</h2>
+<ol>
+<li>A shopper clicks a partner's link. The platform records the click and sends the shopper to your site with <code>?clickid=clk_…</code> added to the address.</li>
+<li>Your site saves that click ID.</li>
+<li>When the shopper buys, your site or server sends the order to the platform with the click ID.</li>
+<li>The platform credits the partner. If the order is refunded, you report that too, and the commission is taken back.</li>
+</ol>
+
+<h2 id="capture-the-click">2. Capture the click</h2>
+<p>Read <code>clickid</code> on the first page the shopper lands on and save it in a first-party cookie for 30 days. Do this before any redirect.</p>
+<pre><code>const clickId = new URLSearchParams(location.search).get("clickid");
+if (clickId) {
+  document.cookie = `partner_click=${clickId}; max-age=${30 * 86400}; path=/; SameSite=Lax`;
+}</code></pre>
+<div class="box"><b>Most common problem:</b> a redirect (to a mobile page, a country site or a new checkout domain) drops the <code>clickid</code> parameter. Keep it on every redirect, or save it before redirecting.</div>
+<p>Pass the click ID through unchanged. Don't trim, re-encode or lowercase it. It always looks like <code>clk_</code> followed by 10 letters or digits.</p>
+
+<h2 id="choose-a-method">3. Choose a method</h2>
+<div class="scroll"><table>
+<tr><th></th><th>Server to server</th><th>Browser tag</th></tr>
+<tr><td>Where it runs</td><td>Your backend, after the order is saved</td><td>The order confirmation page</td></tr>
+<tr><td>Blocked by ad blockers</td><td>No</td><td>Sometimes</td></tr>
+<tr><td>Setup effort</td><td>A developer adds one API call</td><td>Paste a snippet</td></tr>
+<tr><td>Recommended for</td><td>Every integration that can support it</td><td>Quick starts, or alongside server to server</td></tr>
+</table></div>
+<p>Using both is fine. Send the same <code>order_id</code> from each, and the platform counts the sale once.</p>
+
+<h2 id="server-to-server">4. Server to server</h2>
+<pre><code>POST /v1/conversions
+Authorization: Bearer &lt;your live key&gt;
+Content-Type: application/json
+
+{
+  "click_id": "clk_ab12cd34ef",
+  "order_id": "JS-10421",
+  "amount": 84.50,
+  "currency": "USD"
+}</code></pre>
+<p>A new sale returns <code>201</code> with <code>"status": "approved"</code>. Sending the same order again returns <code>200</code> with <code>"status": "duplicate"</code>, and it isn't counted twice. Problems return a <a href="#errors">clear error code</a>.</p>
+
+<h2 id="browser-tag">5. Browser tag</h2>
+<p>Place this on the order confirmation page, and fire it once per order:</p>
+<pre><code>&lt;img src="https://platform.example/v1/tag.gif?click_id=CLICK_ID&amp;order_id=ORDER_ID&amp;amount=84.50&amp;currency=USD"
+     width="1" height="1" alt=""&gt;</code></pre>
+<p>The tag always returns an image, even on error, so it never breaks your page. To debug, check the <code>X-Conversion-Result</code> response header in your browser's network tab.</p>
+
+<h2 id="fields">6. Fields</h2>
+<div class="scroll"><table>
+<tr><th>Field</th><th>Required</th><th>Format</th><th>Example</th></tr>
+<tr><td><code>click_id</code></td><td>Yes</td><td><code>clk_</code> + 10 letters or digits, unchanged</td><td><code>clk_ab12cd34ef</code></td></tr>
+<tr><td><code>order_id</code></td><td>Yes</td><td>Your own order number, unique per order</td><td><code>JS-10421</code></td></tr>
+<tr><td><code>amount</code></td><td>Yes</td><td>Positive number in the currency's main unit, <b>not cents</b></td><td><code>84.50</code></td></tr>
+<tr><td><code>currency</code></td><td>Yes</td><td>Three-letter code from the order: USD, CAD, EUR, GBP or AUD</td><td><code>CAD</code></td></tr>
+</table></div>
+
+<h2 id="authentication">7. Authentication</h2>
+<p>Server calls need <code>Authorization: Bearer &lt;key&gt;</code>. Use the <b>test key</b> while building and the <b>live key</b> in production. Sales sent with the test key are recorded as tests and never pay commission. The browser tag needs no key.</p>
+
+<h2 id="refunds">8. Refunds</h2>
+<p>When an order is fully or partly refunded, tell the platform so the commission is adjusted:</p>
+<pre><code>POST /v1/conversions/JS-10421/reversal
+Authorization: Bearer &lt;your live key&gt;
+
+{"amount": 42.25}</code></pre>
+<p>Leave out <code>amount</code> to reverse the whole order. The best place for this call is wherever your system already processes refunds.</p>
+
+<h2 id="lookback-window">9. Lookback window</h2>
+<p>A sale is credited only if it happens within 30 days of the click. Later sales return <code>click_expired</code>. That's expected behavior, not an error in your integration. The window can be changed in the program settings.</p>
+
+<h2 id="testing">10. Testing and going live</h2>
+<ul class="check">
+<li>Click a test partner link and confirm <code>clickid</code> is still in the address after every redirect, on desktop and mobile.</li>
+<li>Place a test order with the test key and confirm it returns <code>201</code>.</li>
+<li>Check that the amount matches the order exactly, in the main currency unit.</li>
+<li>Place an order in each store currency and confirm the currency is correct.</li>
+<li>Reload the confirmation page and confirm the second report comes back as <code>duplicate</code>.</li>
+<li>Refund a test order and confirm the status changes to <code>reversed</code>.</li>
+<li>Switch to the live key and stop reporting orders marked as tests.</li>
+<li>After a week live, run the health check to compare your orders with what the platform received.</li>
+</ul>
+
+<h2 id="errors">11. Error codes</h2>
+<div class="scroll"><table id="errTable"><tr><th>Code</th><th>Status</th><th>What it means</th></tr></table></div>
+<script>
+fetch("contract.json").then(r => r.json()).then(c => {
+  const t = document.getElementById("errTable");
+  for (const [code, e] of Object.entries(c.errors)) {
+    const tr = t.insertRow();
+    tr.innerHTML = `<td><code>${code}</code></td><td>${e.status}</td><td>${e.message.replace("{field}", "the field named in the error")}</td>`;
+  }
+});
+</script>
+</main>
+</body>
+</html>
