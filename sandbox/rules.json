@@ -1,0 +1,69 @@
+{
+  "about": "Troubleshooter rules shared by the Python tool and the browser demo. Error codes map straight to an issue; plain-text clues add weight, and the highest total wins.",
+  "error_to_issue": {
+    "missing_api_key": "auth_error",
+    "invalid_api_key": "auth_error",
+    "invalid_click_id": "click_id_lost",
+    "unknown_click": "click_id_lost",
+    "amount_too_large": "amount_in_cents",
+    "click_expired": "late_conversion",
+    "missing_field": "validation_error",
+    "invalid_amount": "validation_error",
+    "invalid_currency": "validation_error",
+    "invalid_json": "validation_error",
+    "order_not_found": "validation_error",
+    "reversal_too_large": "validation_error"
+  },
+  "clues": [
+    {
+      "issue": "auth_error",
+      "weight": 3,
+      "pattern": "\\b401\\b|unauthori[sz]ed|api key|bearer|forbidden|\\b403\\b"
+    },
+    {
+      "issue": "amount_in_cents",
+      "weight": 3,
+      "pattern": "\\bcents?\\b|100 ?(times|x)|hundred times|inflated|way too high|commissions? (are|look) huge"
+    },
+    {
+      "issue": "duplicate_fire",
+      "weight": 3,
+      "pattern": "twice|double[ds]?\\b|duplicat|refresh|reload|same order .*(again|two)"
+    },
+    {
+      "issue": "refund_not_reversed",
+      "weight": 3,
+      "pattern": "refund|return(ed|s)?\\b|chargeback|cancel+ed orders?"
+    },
+    {
+      "issue": "currency_mismatch",
+      "weight": 3,
+      "pattern": "currenc|\\bcad\\b|\\beur\\b|\\bgbp\\b|exchange rate|canad|euro"
+    },
+    {
+      "issue": "click_id_lost",
+      "weight": 3,
+      "pattern": "redirect|clickid|click id|click_id|(n'?t|not) (being |getting )?credit|no partner|attribution|unattributed"
+    },
+    {
+      "issue": "conversion_missing",
+      "weight": 2,
+      "pattern": "ad ?block|missing (sales|orders|conversions)|not showing( up)?|never (arrive|show)|fewer|only (shows?|see|has)|lower than|less than|don'?t see|discrepanc"
+    },
+    {
+      "issue": "test_order",
+      "weight": 3,
+      "pattern": "\\bqa\\b|test(ing)? orders?|staging|dummy|internal orders?"
+    },
+    {
+      "issue": "late_conversion",
+      "weight": 3,
+      "pattern": "30 days|lookback|expired|too old|weeks? (later|after)"
+    },
+    {
+      "issue": "validation_error",
+      "weight": 1,
+      "pattern": "\\b400\\b|bad request|rejected|invalid|missing field|error"
+    }
+  ]
+}

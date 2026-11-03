@@ -1,0 +1,22 @@
+{
+  "about": "The conversion API contract for the fictional Sandbox Partner Platform. Shared by the Python server, the health check, the troubleshooter and the browser demo.",
+  "click_id_pattern": "^clk_[a-z0-9]{10}$",
+  "currencies": ["USD", "CAD", "EUR", "GBP", "AUD"],
+  "max_amount": 100000,
+  "lookback_days": 30,
+  "required": ["click_id", "order_id", "amount", "currency"],
+  "errors": {
+    "missing_api_key": {"status": 401, "message": "No API key was sent. Add the header Authorization: Bearer <your key>.", "docs": "#authentication"},
+    "invalid_api_key": {"status": 401, "message": "The API key isn't recognized. Check that you're using the production key, not the test key.", "docs": "#authentication"},
+    "invalid_json": {"status": 400, "message": "The request body isn't valid JSON. Check for a missing quote, comma or bracket.", "docs": "#server-to-server"},
+    "missing_field": {"status": 400, "message": "A required field is missing: {field}.", "docs": "#fields"},
+    "invalid_click_id": {"status": 400, "message": "click_id must look like clk_ followed by 10 letters or digits. Check that the click ID from the landing page URL is passed through unchanged.", "docs": "#capture-the-click"},
+    "invalid_amount": {"status": 400, "message": "amount must be a positive number in the currency's main unit, for example 84.50 for $84.50.", "docs": "#fields"},
+    "amount_too_large": {"status": 400, "message": "amount is over 100,000. If the value is in cents, divide by 100 before sending.", "docs": "#fields"},
+    "invalid_currency": {"status": 400, "message": "currency must be a three-letter code such as USD or CAD.", "docs": "#fields"},
+    "unknown_click": {"status": 404, "message": "No click with this ID was found. The ID may have been changed, cut off or copied from a test link.", "docs": "#capture-the-click"},
+    "click_expired": {"status": 422, "message": "The click is older than the 30-day lookback window, so the sale can't be credited.", "docs": "#lookback-window"},
+    "order_not_found": {"status": 404, "message": "No conversion with this order_id exists, so there's nothing to reverse.", "docs": "#refunds"},
+    "reversal_too_large": {"status": 400, "message": "The refund amount is larger than the original sale.", "docs": "#refunds"}
+  }
+}
