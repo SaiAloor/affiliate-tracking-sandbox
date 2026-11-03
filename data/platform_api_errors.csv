@@ -1,0 +1,12 @@
+received_at,method,order_id,click_id,code,field
+2026-10-05T01:08:03+00:00,tag,JS-10238,clk_ueg1zhcdvr,invalid_amount,amount
+2026-10-05T04:46:03+00:00,tag,JS-10259,clk_cnp0di80fm,click_expired,click_id
+2026-10-11T18:08:03+00:00,tag,JS-10567,clk_66r8vkqz0e,invalid_amount,amount
+2026-10-16T13:39:03+00:00,tag,JS-10768,clk_c1dydix5oq,invalid_amount,amount
+2026-10-16T13:43:00+00:00,tag,JS-10768,clk_c1dydix5oq,invalid_amount,amount
+2026-10-18T17:37:03+00:00,tag,JS-10847,clk_ejd5lotdz2,click_expired,click_id
+2026-10-22T06:27:03+00:00,tag,JS-11027,clk_j44zysuxap,click_expired,click_id
+2026-10-22T06:42:00+00:00,tag,JS-11027,clk_j44zysuxap,click_expired,click_id
+2026-10-24T03:30:03+00:00,tag,JS-11135,clk_knxmyfbu0e,click_expired,click_id
+2026-10-31T04:24:03+00:00,tag,JS-11448,clk_6kqh8eraqq,invalid_amount,amount
+2026-10-31T07:26:03+00:00,tag,JS-11485,clk_72l3atoc7x,invalid_amount,amount
