@@ -1,0 +1,5 @@
+mode,set,kind,cases,correct
+rules,tuning,structured,9,9
+rules,tuning,plain text,21,21
+rules,holdout,structured,3,3
+rules,holdout,plain text,9,0

@@ -1,0 +1,561 @@
+order_id,issue,title,commission_impact_usd,detail
+JS-10004,currency_mismatch,Wrong currency sent,1.1,"store CAD, platform USD"
+JS-10005,conversion_missing,Sale never reached the platform,-10.25,order has a click ID but never reached the platform
+JS-10008,refund_not_reversed,Refunds not reported,3.96,"refunded 49.51 in the store, 0.00 reported"
+JS-10012,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-10014,refund_not_reversed,Refunds not reported,18.71,"refunded 233.85 in the store, 0.00 reported"
+JS-10021,currency_mismatch,Wrong currency sent,1.49,"store CAD, platform USD"
+JS-10028,currency_mismatch,Wrong currency sent,4.0,"store CAD, platform USD"
+JS-10030,click_id_lost,Click ID lost before checkout,-2.86,"partner traffic, but the order has no click ID"
+JS-10033,click_id_lost,Click ID lost before checkout,-11.07,"partner traffic, but the order has no click ID"
+JS-10039,currency_mismatch,Wrong currency sent,1.37,"store CAD, platform USD"
+JS-10041,currency_mismatch,Wrong currency sent,2.74,"store CAD, platform USD"
+JS-10043,currency_mismatch,Wrong currency sent,1.28,"store CAD, platform USD"
+JS-10044,currency_mismatch,Wrong currency sent,2.94,"store CAD, platform USD"
+JS-10046,currency_mismatch,Wrong currency sent,2.53,"store CAD, platform USD"
+JS-10050,refund_not_reversed,Refunds not reported,2.95,"refunded 36.93 in the store, 0.00 reported"
+JS-10053,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-10054,conversion_missing,Sale never reached the platform,-6.18,order has a click ID but never reached the platform
+JS-10056,conversion_missing,Sale never reached the platform,-3.39,order has a click ID but never reached the platform
+JS-10058,conversion_missing,Sale never reached the platform,-5.8,order has a click ID but never reached the platform
+JS-10059,currency_mismatch,Wrong currency sent,0.59,"store CAD, platform USD"
+JS-10059,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-10061,conversion_missing,Sale never reached the platform,-4.14,order has a click ID but never reached the platform
+JS-10064,click_id_lost,Click ID lost before checkout,-6.85,"partner traffic, but the order has no click ID"
+JS-10070,currency_mismatch,Wrong currency sent,1.39,"store CAD, platform USD"
+JS-10071,currency_mismatch,Wrong currency sent,0.56,"store CAD, platform USD"
+JS-10075,click_id_lost,Click ID lost before checkout,-4.02,"partner traffic, but the order has no click ID"
+JS-10079,currency_mismatch,Wrong currency sent,1.6,"store CAD, platform USD"
+JS-10084,click_id_lost,Click ID lost before checkout,-7.96,"partner traffic, but the order has no click ID"
+JS-10085,conversion_missing,Sale never reached the platform,-4.0,order has a click ID but never reached the platform
+JS-10087,conversion_missing,Sale never reached the platform,-7.9,order has a click ID but never reached the platform
+JS-10090,conversion_missing,Sale never reached the platform,-3.59,order has a click ID but never reached the platform
+JS-10094,currency_mismatch,Wrong currency sent,2.62,"store CAD, platform USD"
+JS-10096,conversion_missing,Sale never reached the platform,-5.75,order has a click ID but never reached the platform
+JS-10097,refund_not_reversed,Refunds not reported,5.58,"refunded 69.77 in the store, 0.00 reported"
+JS-10098,click_id_lost,Click ID lost before checkout,-12.2,"partner traffic, but the order has no click ID"
+JS-10119,currency_mismatch,Wrong currency sent,2.27,"store CAD, platform USD"
+JS-10119,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-10120,click_id_lost,Click ID lost before checkout,-1.4,"partner traffic, but the order has no click ID"
+JS-10122,refund_not_reversed,Refunds not reported,4.76,"refunded 59.50 in the store, 0.00 reported"
+JS-10123,currency_mismatch,Wrong currency sent,2.7,"store CAD, platform USD"
+JS-10126,refund_not_reversed,Refunds not reported,2.69,"refunded 33.61 in the store, 0.00 reported"
+JS-10127,currency_mismatch,Wrong currency sent,2.09,"store CAD, platform USD"
+JS-10130,currency_mismatch,Wrong currency sent,2.47,"store CAD, platform USD"
+JS-10133,currency_mismatch,Wrong currency sent,1.95,"store CAD, platform USD"
+JS-10137,click_id_lost,Click ID lost before checkout,-4.68,"partner traffic, but the order has no click ID"
+JS-10140,refund_not_reversed,Refunds not reported,2.51,"refunded 31.43 in the store, 0.00 reported"
+JS-10142,click_id_lost,Click ID lost before checkout,-3.91,"partner traffic, but the order has no click ID"
+JS-10147,conversion_missing,Sale never reached the platform,-5.45,order has a click ID but never reached the platform
+JS-10150,currency_mismatch,Wrong currency sent,1.11,"store CAD, platform USD"
+JS-10157,currency_mismatch,Wrong currency sent,2.35,"store CAD, platform USD"
+JS-10161,conversion_missing,Sale never reached the platform,-7.51,order has a click ID but never reached the platform
+JS-10163,conversion_missing,Sale never reached the platform,-5.83,order has a click ID but never reached the platform
+JS-10173,click_id_lost,Click ID lost before checkout,-6.74,"partner traffic, but the order has no click ID"
+JS-10175,currency_mismatch,Wrong currency sent,3.65,"store CAD, platform USD"
+JS-10178,conversion_missing,Sale never reached the platform,-8.77,order has a click ID but never reached the platform
+JS-10186,conversion_missing,Sale never reached the platform,-9.77,order has a click ID but never reached the platform
+JS-10191,click_id_lost,Click ID lost before checkout,-6.31,"partner traffic, but the order has no click ID"
+JS-10196,conversion_missing,Sale never reached the platform,-5.6,order has a click ID but never reached the platform
+JS-10200,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-10203,conversion_missing,Sale never reached the platform,-3.7,order has a click ID but never reached the platform
+JS-10206,click_id_lost,Click ID lost before checkout,-13.77,"partner traffic, but the order has no click ID"
+JS-10212,click_id_lost,Click ID lost before checkout,-15.05,"partner traffic, but the order has no click ID"
+JS-10220,currency_mismatch,Wrong currency sent,1.03,"store CAD, platform USD"
+JS-10228,currency_mismatch,Wrong currency sent,2.01,"store CAD, platform USD"
+JS-10229,currency_mismatch,Wrong currency sent,1.09,"store CAD, platform USD"
+JS-10232,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-10233,refund_not_reversed,Refunds not reported,7.1,"refunded 88.75 in the store, 0.00 reported"
+JS-10235,click_id_lost,Click ID lost before checkout,-4.54,"partner traffic, but the order has no click ID"
+JS-10236,currency_mismatch,Wrong currency sent,1.5,"store CAD, platform USD"
+JS-10238,validation_error,Requests rejected by the API,-0.0,rejected: invalid_amount
+JS-10242,currency_mismatch,Wrong currency sent,1.03,"store CAD, platform USD"
+JS-10243,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-10246,conversion_missing,Sale never reached the platform,-4.11,order has a click ID but never reached the platform
+JS-10248,currency_mismatch,Wrong currency sent,1.2,"store CAD, platform USD"
+JS-10259,late_conversion,Sale outside the lookback window,0.0,rejected: click older than the lookback window
+JS-10260,click_id_lost,Click ID lost before checkout,-5.74,"partner traffic, but the order has no click ID"
+JS-10263,click_id_lost,Click ID lost before checkout,-5.04,"partner traffic, but the order has no click ID"
+JS-10265,currency_mismatch,Wrong currency sent,1.75,"store CAD, platform USD"
+JS-10267,currency_mismatch,Wrong currency sent,2.19,"store CAD, platform USD"
+JS-10271,click_id_lost,Click ID lost before checkout,-1.01,"partner traffic, but the order has no click ID"
+JS-10274,currency_mismatch,Wrong currency sent,1.67,"store CAD, platform USD"
+JS-10284,currency_mismatch,Wrong currency sent,4.62,"store CAD, platform USD"
+JS-10284,refund_not_reversed,Refunds not reported,12.48,"refunded 213.78 in the store, 0.00 reported"
+JS-10288,refund_not_reversed,Refunds not reported,5.2,"refunded 64.95 in the store, 0.00 reported"
+JS-10290,click_id_lost,Click ID lost before checkout,-9.68,"partner traffic, but the order has no click ID"
+JS-10310,currency_mismatch,Wrong currency sent,1.52,"store CAD, platform USD"
+JS-10311,currency_mismatch,Wrong currency sent,1.17,"store CAD, platform USD"
+JS-10316,currency_mismatch,Wrong currency sent,2.83,"store CAD, platform USD"
+JS-10319,currency_mismatch,Wrong currency sent,2.54,"store CAD, platform USD"
+JS-10324,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-10325,click_id_lost,Click ID lost before checkout,-3.78,"partner traffic, but the order has no click ID"
+JS-10326,click_id_lost,Click ID lost before checkout,-4.06,"partner traffic, but the order has no click ID"
+JS-10327,conversion_missing,Sale never reached the platform,-4.38,order has a click ID but never reached the platform
+JS-10329,click_id_lost,Click ID lost before checkout,-9.63,"partner traffic, but the order has no click ID"
+JS-10333,currency_mismatch,Wrong currency sent,1.21,"store CAD, platform USD"
+JS-10339,currency_mismatch,Wrong currency sent,1.14,"store CAD, platform USD"
+JS-10341,conversion_missing,Sale never reached the platform,-1.73,order has a click ID but never reached the platform
+JS-10344,refund_not_reversed,Refunds not reported,10.02,"refunded 125.23 in the store, 0.00 reported"
+JS-10349,refund_not_reversed,Refunds not reported,4.42,"refunded 55.22 in the store, 0.00 reported"
+JS-10351,refund_not_reversed,Refunds not reported,4.54,"refunded 56.76 in the store, 0.00 reported"
+JS-10352,click_id_lost,Click ID lost before checkout,-3.95,"partner traffic, but the order has no click ID"
+JS-10355,conversion_missing,Sale never reached the platform,-8.82,order has a click ID but never reached the platform
+JS-10356,conversion_missing,Sale never reached the platform,-9.65,order has a click ID but never reached the platform
+JS-10357,conversion_missing,Sale never reached the platform,-2.01,order has a click ID but never reached the platform
+JS-10360,click_id_lost,Click ID lost before checkout,-6.4,"partner traffic, but the order has no click ID"
+JS-10364,conversion_missing,Sale never reached the platform,-4.7,order has a click ID but never reached the platform
+JS-10365,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-10366,conversion_missing,Sale never reached the platform,-8.29,order has a click ID but never reached the platform
+JS-10367,click_id_lost,Click ID lost before checkout,-11.91,"partner traffic, but the order has no click ID"
+JS-10372,click_id_lost,Click ID lost before checkout,-13.04,"partner traffic, but the order has no click ID"
+JS-10373,refund_not_reversed,Refunds not reported,9.89,"refunded 123.67 in the store, 0.00 reported"
+JS-10377,conversion_missing,Sale never reached the platform,-4.99,order has a click ID but never reached the platform
+JS-10380,currency_mismatch,Wrong currency sent,2.71,"store CAD, platform USD"
+JS-10383,currency_mismatch,Wrong currency sent,1.5,"store CAD, platform USD"
+JS-10383,refund_not_reversed,Refunds not reported,2.03,"refunded 34.74 in the store, 0.00 reported"
+JS-10384,currency_mismatch,Wrong currency sent,6.03,"store CAD, platform USD"
+JS-10387,currency_mismatch,Wrong currency sent,2.84,"store CAD, platform USD"
+JS-10390,refund_not_reversed,Refunds not reported,6.6,"refunded 82.45 in the store, 0.00 reported"
+JS-10400,currency_mismatch,Wrong currency sent,1.06,"store CAD, platform USD"
+JS-10403,currency_mismatch,Wrong currency sent,1.38,"store CAD, platform USD"
+JS-10404,refund_not_reversed,Refunds not reported,5.93,"refunded 74.16 in the store, 0.00 reported"
+JS-10408,refund_not_reversed,Refunds not reported,2.28,"refunded 28.56 in the store, 0.00 reported"
+JS-10410,conversion_missing,Sale never reached the platform,-4.55,order has a click ID but never reached the platform
+JS-10412,currency_mismatch,Wrong currency sent,1.33,"store CAD, platform USD"
+JS-10414,currency_mismatch,Wrong currency sent,1.13,"store CAD, platform USD"
+JS-10422,currency_mismatch,Wrong currency sent,1.31,"store CAD, platform USD"
+JS-10424,currency_mismatch,Wrong currency sent,2.48,"store CAD, platform USD"
+JS-10431,currency_mismatch,Wrong currency sent,1.53,"store CAD, platform USD"
+JS-10434,conversion_missing,Sale never reached the platform,-8.63,order has a click ID but never reached the platform
+JS-10435,currency_mismatch,Wrong currency sent,2.84,"store CAD, platform USD"
+JS-10443,refund_not_reversed,Refunds not reported,2.63,"refunded 32.85 in the store, 0.00 reported"
+JS-10447,conversion_missing,Sale never reached the platform,-8.81,order has a click ID but never reached the platform
+JS-10450,refund_not_reversed,Refunds not reported,9.09,"refunded 113.60 in the store, 0.00 reported"
+JS-10453,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-10455,currency_mismatch,Wrong currency sent,1.55,"store CAD, platform USD"
+JS-10465,refund_not_reversed,Refunds not reported,2.77,"refunded 34.65 in the store, 0.00 reported"
+JS-10467,refund_not_reversed,Refunds not reported,3.72,"refunded 46.49 in the store, 0.00 reported"
+JS-10471,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-10476,conversion_missing,Sale never reached the platform,-15.84,order has a click ID but never reached the platform
+JS-10479,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-10483,currency_mismatch,Wrong currency sent,2.47,"store CAD, platform USD"
+JS-10496,refund_not_reversed,Refunds not reported,0.8,"refunded 10.01 in the store, 0.00 reported"
+JS-10506,currency_mismatch,Wrong currency sent,3.67,"store CAD, platform USD"
+JS-10510,currency_mismatch,Wrong currency sent,3.23,"store CAD, platform USD"
+JS-10518,click_id_lost,Click ID lost before checkout,-2.79,"partner traffic, but the order has no click ID"
+JS-10521,click_id_lost,Click ID lost before checkout,-12.7,"partner traffic, but the order has no click ID"
+JS-10524,currency_mismatch,Wrong currency sent,1.71,"store CAD, platform USD"
+JS-10529,currency_mismatch,Wrong currency sent,0.94,"store CAD, platform USD"
+JS-10538,currency_mismatch,Wrong currency sent,2.68,"store CAD, platform USD"
+JS-10539,currency_mismatch,Wrong currency sent,1.05,"store CAD, platform USD"
+JS-10541,currency_mismatch,Wrong currency sent,2.96,"store CAD, platform USD"
+JS-10546,click_id_lost,Click ID lost before checkout,-3.43,"partner traffic, but the order has no click ID"
+JS-10549,currency_mismatch,Wrong currency sent,1.29,"store CAD, platform USD"
+JS-10550,refund_not_reversed,Refunds not reported,11.08,"refunded 138.46 in the store, 0.00 reported"
+JS-10551,currency_mismatch,Wrong currency sent,1.77,"store CAD, platform USD"
+JS-10551,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-10552,currency_mismatch,Wrong currency sent,1.77,"store CAD, platform USD"
+JS-10562,refund_not_reversed,Refunds not reported,11.02,"refunded 137.74 in the store, 0.00 reported"
+JS-10562,test_order,Test orders sent to production,11.02,store marks this as a test order
+JS-10563,conversion_missing,Sale never reached the platform,-11.59,order has a click ID but never reached the platform
+JS-10566,click_id_lost,Click ID lost before checkout,-2.64,"partner traffic, but the order has no click ID"
+JS-10567,validation_error,Requests rejected by the API,-0.0,rejected: invalid_amount
+JS-10570,click_id_lost,Click ID lost before checkout,-11.44,"partner traffic, but the order has no click ID"
+JS-10573,currency_mismatch,Wrong currency sent,3.74,"store CAD, platform USD"
+JS-10575,click_id_lost,Click ID lost before checkout,-3.08,"partner traffic, but the order has no click ID"
+JS-10578,click_id_lost,Click ID lost before checkout,-3.27,"partner traffic, but the order has no click ID"
+JS-10579,currency_mismatch,Wrong currency sent,2.34,"store CAD, platform USD"
+JS-10582,conversion_missing,Sale never reached the platform,-18.24,order has a click ID but never reached the platform
+JS-10585,currency_mismatch,Wrong currency sent,4.02,"store CAD, platform USD"
+JS-10593,click_id_lost,Click ID lost before checkout,-4.45,"partner traffic, but the order has no click ID"
+JS-10600,click_id_lost,Click ID lost before checkout,-3.6,"partner traffic, but the order has no click ID"
+JS-10602,currency_mismatch,Wrong currency sent,1.37,"store CAD, platform USD"
+JS-10603,refund_not_reversed,Refunds not reported,7.86,"refunded 98.29 in the store, 0.00 reported"
+JS-10608,currency_mismatch,Wrong currency sent,1.13,"store CAD, platform USD"
+JS-10616,refund_not_reversed,Refunds not reported,2.69,"refunded 33.65 in the store, 0.00 reported"
+JS-10621,currency_mismatch,Wrong currency sent,1.04,"store CAD, platform USD"
+JS-10622,currency_mismatch,Wrong currency sent,0.72,"store CAD, platform USD"
+JS-10628,currency_mismatch,Wrong currency sent,2.08,"store CAD, platform USD"
+JS-10630,conversion_missing,Sale never reached the platform,-6.86,order has a click ID but never reached the platform
+JS-10632,refund_not_reversed,Refunds not reported,3.63,"refunded 45.43 in the store, 0.00 reported"
+JS-10633,currency_mismatch,Wrong currency sent,0.97,"store CAD, platform USD"
+JS-10642,conversion_missing,Sale never reached the platform,-3.45,order has a click ID but never reached the platform
+JS-10644,currency_mismatch,Wrong currency sent,2.39,"store CAD, platform USD"
+JS-10645,refund_not_reversed,Refunds not reported,5.29,"refunded 66.17 in the store, 0.00 reported"
+JS-10646,click_id_lost,Click ID lost before checkout,-6.0,"partner traffic, but the order has no click ID"
+JS-10656,conversion_missing,Sale never reached the platform,-10.94,order has a click ID but never reached the platform
+JS-10659,currency_mismatch,Wrong currency sent,0.54,"store CAD, platform USD"
+JS-10660,conversion_missing,Sale never reached the platform,-10.15,order has a click ID but never reached the platform
+JS-10665,conversion_missing,Sale never reached the platform,-8.76,order has a click ID but never reached the platform
+JS-10666,currency_mismatch,Wrong currency sent,1.12,"store CAD, platform USD"
+JS-10667,currency_mismatch,Wrong currency sent,1.68,"store CAD, platform USD"
+JS-10668,click_id_lost,Click ID lost before checkout,-2.24,"partner traffic, but the order has no click ID"
+JS-10669,conversion_missing,Sale never reached the platform,-2.61,order has a click ID but never reached the platform
+JS-10671,currency_mismatch,Wrong currency sent,0.69,"store CAD, platform USD"
+JS-10675,click_id_lost,Click ID lost before checkout,-3.84,"partner traffic, but the order has no click ID"
+JS-10676,currency_mismatch,Wrong currency sent,0.95,"store CAD, platform USD"
+JS-10677,conversion_missing,Sale never reached the platform,-2.24,order has a click ID but never reached the platform
+JS-10679,click_id_lost,Click ID lost before checkout,-5.74,"partner traffic, but the order has no click ID"
+JS-10691,click_id_lost,Click ID lost before checkout,-2.6,"partner traffic, but the order has no click ID"
+JS-10702,conversion_missing,Sale never reached the platform,-4.83,order has a click ID but never reached the platform
+JS-10706,refund_not_reversed,Refunds not reported,1.01,"refunded 12.64 in the store, 0.00 reported"
+JS-10708,click_id_lost,Click ID lost before checkout,-14.7,"partner traffic, but the order has no click ID"
+JS-10711,refund_not_reversed,Refunds not reported,7.41,"refunded 92.62 in the store, 0.00 reported"
+JS-10717,refund_not_reversed,Refunds not reported,2.49,"refunded 31.13 in the store, 0.00 reported"
+JS-10720,currency_mismatch,Wrong currency sent,0.71,"store CAD, platform USD"
+JS-10723,currency_mismatch,Wrong currency sent,1.79,"store CAD, platform USD"
+JS-10743,currency_mismatch,Wrong currency sent,1.64,"store CAD, platform USD"
+JS-10744,test_order,Test orders sent to production,2.63,store marks this as a test order
+JS-10746,conversion_missing,Sale never reached the platform,-8.54,order has a click ID but never reached the platform
+JS-10747,conversion_missing,Sale never reached the platform,-16.52,order has a click ID but never reached the platform
+JS-10752,refund_not_reversed,Refunds not reported,7.64,"refunded 95.47 in the store, 0.00 reported"
+JS-10761,test_order,Test orders sent to production,2.66,store marks this as a test order
+JS-10763,currency_mismatch,Wrong currency sent,2.06,"store CAD, platform USD"
+JS-10766,click_id_lost,Click ID lost before checkout,-6.36,"partner traffic, but the order has no click ID"
+JS-10767,conversion_missing,Sale never reached the platform,-3.27,order has a click ID but never reached the platform
+JS-10768,validation_error,Requests rejected by the API,-0.0,rejected: invalid_amount
+JS-10773,currency_mismatch,Wrong currency sent,2.01,"store CAD, platform USD"
+JS-10777,currency_mismatch,Wrong currency sent,2.14,"store CAD, platform USD"
+JS-10785,refund_not_reversed,Refunds not reported,2.84,"refunded 35.50 in the store, 0.00 reported"
+JS-10794,click_id_lost,Click ID lost before checkout,-3.17,"partner traffic, but the order has no click ID"
+JS-10795,click_id_lost,Click ID lost before checkout,-7.49,"partner traffic, but the order has no click ID"
+JS-10797,conversion_missing,Sale never reached the platform,-11.72,order has a click ID but never reached the platform
+JS-10799,currency_mismatch,Wrong currency sent,0.7,"store CAD, platform USD"
+JS-10799,refund_not_reversed,Refunds not reported,0.95,"refunded 16.27 in the store, 0.00 reported"
+JS-10808,currency_mismatch,Wrong currency sent,0.54,"store CAD, platform USD"
+JS-10811,conversion_missing,Sale never reached the platform,-2.42,order has a click ID but never reached the platform
+JS-10813,click_id_lost,Click ID lost before checkout,-2.87,"partner traffic, but the order has no click ID"
+JS-10818,currency_mismatch,Wrong currency sent,1.75,"store CAD, platform USD"
+JS-10821,conversion_missing,Sale never reached the platform,-2.54,order has a click ID but never reached the platform
+JS-10824,currency_mismatch,Wrong currency sent,1.94,"store CAD, platform USD"
+JS-10826,refund_not_reversed,Refunds not reported,5.5,"refunded 68.80 in the store, 0.00 reported"
+JS-10827,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-10838,currency_mismatch,Wrong currency sent,1.75,"store CAD, platform USD"
+JS-10839,currency_mismatch,Wrong currency sent,1.63,"store CAD, platform USD"
+JS-10842,click_id_lost,Click ID lost before checkout,-11.62,"partner traffic, but the order has no click ID"
+JS-10847,late_conversion,Sale outside the lookback window,0.0,rejected: click older than the lookback window
+JS-10849,currency_mismatch,Wrong currency sent,1.63,"store CAD, platform USD"
+JS-10857,refund_not_reversed,Refunds not reported,6.81,"refunded 85.09 in the store, 0.00 reported"
+JS-10859,conversion_missing,Sale never reached the platform,-3.27,order has a click ID but never reached the platform
+JS-10861,currency_mismatch,Wrong currency sent,6.43,"store CAD, platform USD"
+JS-10865,currency_mismatch,Wrong currency sent,1.12,"store CAD, platform USD"
+JS-10865,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-10870,currency_mismatch,Wrong currency sent,1.77,"store CAD, platform USD"
+JS-10876,refund_not_reversed,Refunds not reported,5.77,"refunded 72.14 in the store, 0.00 reported"
+JS-10878,refund_not_reversed,Refunds not reported,3.62,"refunded 45.31 in the store, 0.00 reported"
+JS-10881,click_id_lost,Click ID lost before checkout,-6.55,"partner traffic, but the order has no click ID"
+JS-10882,currency_mismatch,Wrong currency sent,0.5,"store CAD, platform USD"
+JS-10890,currency_mismatch,Wrong currency sent,1.67,"store CAD, platform USD"
+JS-10892,refund_not_reversed,Refunds not reported,2.85,"refunded 35.62 in the store, 0.00 reported"
+JS-10894,currency_mismatch,Wrong currency sent,1.16,"store CAD, platform USD"
+JS-10899,click_id_lost,Click ID lost before checkout,-7.22,"partner traffic, but the order has no click ID"
+JS-10902,currency_mismatch,Wrong currency sent,1.34,"store CAD, platform USD"
+JS-10921,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-10932,click_id_lost,Click ID lost before checkout,-6.02,"partner traffic, but the order has no click ID"
+JS-10945,currency_mismatch,Wrong currency sent,0.75,"store CAD, platform USD"
+JS-10958,refund_not_reversed,Refunds not reported,2.41,"refunded 30.09 in the store, 0.00 reported"
+JS-10960,currency_mismatch,Wrong currency sent,1.39,"store CAD, platform USD"
+JS-10967,currency_mismatch,Wrong currency sent,2.36,"store CAD, platform USD"
+JS-10974,refund_not_reversed,Refunds not reported,4.11,"refunded 51.39 in the store, 0.00 reported"
+JS-10981,refund_not_reversed,Refunds not reported,2.0,"refunded 24.95 in the store, 0.00 reported"
+JS-10982,currency_mismatch,Wrong currency sent,1.71,"store CAD, platform USD"
+JS-10982,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-10983,currency_mismatch,Wrong currency sent,1.77,"store CAD, platform USD"
+JS-10985,conversion_missing,Sale never reached the platform,-2.08,order has a click ID but never reached the platform
+JS-10988,currency_mismatch,Wrong currency sent,1.89,"store CAD, platform USD"
+JS-10999,currency_mismatch,Wrong currency sent,0.47,"store CAD, platform USD"
+JS-11001,currency_mismatch,Wrong currency sent,1.31,"store CAD, platform USD"
+JS-11002,currency_mismatch,Wrong currency sent,2.22,"store CAD, platform USD"
+JS-11010,conversion_missing,Sale never reached the platform,-6.15,order has a click ID but never reached the platform
+JS-11018,refund_not_reversed,Refunds not reported,3.72,"refunded 46.52 in the store, 0.00 reported"
+JS-11022,conversion_missing,Sale never reached the platform,-5.7,order has a click ID but never reached the platform
+JS-11023,currency_mismatch,Wrong currency sent,2.19,"store CAD, platform USD"
+JS-11027,late_conversion,Sale outside the lookback window,0.0,rejected: click older than the lookback window
+JS-11030,click_id_lost,Click ID lost before checkout,-8.45,"partner traffic, but the order has no click ID"
+JS-11031,currency_mismatch,Wrong currency sent,1.06,"store CAD, platform USD"
+JS-11037,click_id_lost,Click ID lost before checkout,-4.11,"partner traffic, but the order has no click ID"
+JS-11041,currency_mismatch,Wrong currency sent,1.29,"store CAD, platform USD"
+JS-11044,currency_mismatch,Wrong currency sent,2.04,"store CAD, platform USD"
+JS-11050,conversion_missing,Sale never reached the platform,-7.32,order has a click ID but never reached the platform
+JS-11051,currency_mismatch,Wrong currency sent,0.99,"store CAD, platform USD"
+JS-11053,currency_mismatch,Wrong currency sent,2.0,"store CAD, platform USD"
+JS-11061,currency_mismatch,Wrong currency sent,0.45,"store CAD, platform USD"
+JS-11067,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-11072,click_id_lost,Click ID lost before checkout,-4.55,"partner traffic, but the order has no click ID"
+JS-11074,currency_mismatch,Wrong currency sent,1.49,"store CAD, platform USD"
+JS-11075,currency_mismatch,Wrong currency sent,0.75,"store CAD, platform USD"
+JS-11077,currency_mismatch,Wrong currency sent,2.63,"store CAD, platform USD"
+JS-11078,currency_mismatch,Wrong currency sent,1.17,"store CAD, platform USD"
+JS-11085,currency_mismatch,Wrong currency sent,0.37,"store CAD, platform USD"
+JS-11087,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-11089,conversion_missing,Sale never reached the platform,-6.79,order has a click ID but never reached the platform
+JS-11092,refund_not_reversed,Refunds not reported,1.69,"refunded 21.11 in the store, 0.00 reported"
+JS-11095,currency_mismatch,Wrong currency sent,1.82,"store CAD, platform USD"
+JS-11103,click_id_lost,Click ID lost before checkout,-7.86,"partner traffic, but the order has no click ID"
+JS-11105,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-11113,currency_mismatch,Wrong currency sent,1.39,"store CAD, platform USD"
+JS-11115,conversion_missing,Sale never reached the platform,-5.63,order has a click ID but never reached the platform
+JS-11118,conversion_missing,Sale never reached the platform,-10.16,order has a click ID but never reached the platform
+JS-11123,refund_not_reversed,Refunds not reported,8.97,"refunded 112.07 in the store, 0.00 reported"
+JS-11125,conversion_missing,Sale never reached the platform,-1.95,order has a click ID but never reached the platform
+JS-11127,click_id_lost,Click ID lost before checkout,-2.41,"partner traffic, but the order has no click ID"
+JS-11131,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-11135,late_conversion,Sale outside the lookback window,0.0,rejected: click older than the lookback window
+JS-11138,conversion_missing,Sale never reached the platform,-10.0,order has a click ID but never reached the platform
+JS-11150,currency_mismatch,Wrong currency sent,1.95,"store CAD, platform USD"
+JS-11151,click_id_lost,Click ID lost before checkout,-2.84,"partner traffic, but the order has no click ID"
+JS-11157,currency_mismatch,Wrong currency sent,2.72,"store CAD, platform USD"
+JS-11160,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-11164,currency_mismatch,Wrong currency sent,1.55,"store CAD, platform USD"
+JS-11168,conversion_missing,Sale never reached the platform,-2.68,order has a click ID but never reached the platform
+JS-11169,currency_mismatch,Wrong currency sent,1.69,"store CAD, platform USD"
+JS-11173,currency_mismatch,Wrong currency sent,1.36,"store CAD, platform USD"
+JS-11195,currency_mismatch,Wrong currency sent,0.47,"store CAD, platform USD"
+JS-11202,refund_not_reversed,Refunds not reported,2.64,"refunded 32.94 in the store, 0.00 reported"
+JS-11204,click_id_lost,Click ID lost before checkout,-6.29,"partner traffic, but the order has no click ID"
+JS-11206,conversion_missing,Sale never reached the platform,-10.99,order has a click ID but never reached the platform
+JS-11220,conversion_missing,Sale never reached the platform,-4.52,order has a click ID but never reached the platform
+JS-11227,conversion_missing,Sale never reached the platform,-3.98,order has a click ID but never reached the platform
+JS-11230,refund_not_reversed,Refunds not reported,6.18,"refunded 77.21 in the store, 0.00 reported"
+JS-11232,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-11236,click_id_lost,Click ID lost before checkout,-23.74,"partner traffic, but the order has no click ID"
+JS-11252,refund_not_reversed,Refunds not reported,1.41,"refunded 17.64 in the store, 0.00 reported"
+JS-11257,conversion_missing,Sale never reached the platform,-3.52,order has a click ID but never reached the platform
+JS-11260,refund_not_reversed,Refunds not reported,4.97,"refunded 62.15 in the store, 0.00 reported"
+JS-11262,refund_not_reversed,Refunds not reported,3.34,"refunded 41.71 in the store, 0.00 reported"
+JS-11263,currency_mismatch,Wrong currency sent,0.67,"store CAD, platform USD"
+JS-11264,click_id_lost,Click ID lost before checkout,-17.59,"partner traffic, but the order has no click ID"
+JS-11266,click_id_lost,Click ID lost before checkout,-17.29,"partner traffic, but the order has no click ID"
+JS-11269,click_id_lost,Click ID lost before checkout,-2.37,"partner traffic, but the order has no click ID"
+JS-11270,refund_not_reversed,Refunds not reported,4.55,"refunded 56.83 in the store, 0.00 reported"
+JS-11271,click_id_lost,Click ID lost before checkout,-6.45,"partner traffic, but the order has no click ID"
+JS-11274,amount_in_cents,Amount sent in cents,311.17,"store 53.82, platform 5382.00"
+JS-11274,currency_mismatch,Wrong currency sent,1.16,"store CAD, platform USD"
+JS-11275,amount_in_cents,Amount sent in cents,524.3,"store 66.20, platform 6620.00"
+JS-11276,amount_in_cents,Amount sent in cents,308.09,"store 38.90, platform 3890.00"
+JS-11277,amount_in_cents,Amount sent in cents,920.07,"store 116.17, platform 11617.00"
+JS-11278,amount_in_cents,Amount sent in cents,812.04,"store 102.53, platform 10253.00"
+JS-11279,amount_in_cents,Amount sent in cents,1278.84,"store 161.47, platform 16147.00"
+JS-11281,amount_in_cents,Amount sent in cents,363.05,"store 45.84, platform 4584.00"
+JS-11282,amount_in_cents,Amount sent in cents,811.88,"store 102.51, platform 10251.00"
+JS-11283,amount_in_cents,Amount sent in cents,1119.73,"store 141.38, platform 14138.00"
+JS-11284,click_id_lost,Click ID lost before checkout,-6.32,"partner traffic, but the order has no click ID"
+JS-11285,amount_in_cents,Amount sent in cents,315.77,"store 39.87, platform 3987.00"
+JS-11286,conversion_missing,Sale never reached the platform,-6.42,order has a click ID but never reached the platform
+JS-11287,amount_in_cents,Amount sent in cents,417.78,"store 72.26, platform 7226.00"
+JS-11287,currency_mismatch,Wrong currency sent,1.56,"store CAD, platform USD"
+JS-11287,refund_not_reversed,Refunds not reported,4.22,"refunded 72.26 in the store, 0.00 reported"
+JS-11288,amount_in_cents,Amount sent in cents,451.52,"store 57.01, platform 5701.00"
+JS-11291,conversion_missing,Sale never reached the platform,-4.28,order has a click ID but never reached the platform
+JS-11292,amount_in_cents,Amount sent in cents,503.71,"store 63.60, platform 6360.00"
+JS-11293,amount_in_cents,Amount sent in cents,367.02,"store 63.48, platform 6348.00"
+JS-11293,currency_mismatch,Wrong currency sent,1.37,"store CAD, platform USD"
+JS-11295,amount_in_cents,Amount sent in cents,637.4,"store 80.48, platform 8048.00"
+JS-11296,amount_in_cents,Amount sent in cents,1662.41,"store 209.90, platform 20990.00"
+JS-11297,amount_in_cents,Amount sent in cents,570.48,"store 72.03, platform 7203.00"
+JS-11298,amount_in_cents,Amount sent in cents,390.93,"store 49.36, platform 4936.00"
+JS-11300,amount_in_cents,Amount sent in cents,257.24,"store 32.48, platform 3248.00"
+JS-11301,amount_in_cents,Amount sent in cents,1179.6,"store 148.94, platform 14894.00"
+JS-11302,amount_in_cents,Amount sent in cents,812.28,"store 102.56, platform 10256.00"
+JS-11303,amount_in_cents,Amount sent in cents,462.53,"store 58.40, platform 5840.00"
+JS-11304,amount_in_cents,Amount sent in cents,209.4,"store 26.44, platform 2644.00"
+JS-11306,amount_in_cents,Amount sent in cents,888.94,"store 112.24, platform 11224.00"
+JS-11307,amount_in_cents,Amount sent in cents,227.7,"store 28.75, platform 2875.00"
+JS-11309,amount_in_cents,Amount sent in cents,513.69,"store 64.86, platform 6486.00"
+JS-11310,amount_in_cents,Amount sent in cents,388.24,"store 49.02, platform 4902.00"
+JS-11310,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-11311,amount_in_cents,Amount sent in cents,429.42,"store 54.22, platform 5422.00"
+JS-11312,amount_in_cents,Amount sent in cents,1032.13,"store 130.32, platform 13032.00"
+JS-11313,amount_in_cents,Amount sent in cents,552.89,"store 95.63, platform 9563.00"
+JS-11313,currency_mismatch,Wrong currency sent,2.07,"store CAD, platform USD"
+JS-11314,amount_in_cents,Amount sent in cents,1458.78,"store 184.19, platform 18419.00"
+JS-11314,refund_not_reversed,Refunds not reported,7.37,"refunded 92.09 in the store, 0.00 reported"
+JS-11315,click_id_lost,Click ID lost before checkout,-2.77,"partner traffic, but the order has no click ID"
+JS-11316,amount_in_cents,Amount sent in cents,913.73,"store 115.37, platform 11537.00"
+JS-11317,amount_in_cents,Amount sent in cents,423.72,"store 53.50, platform 5350.00"
+JS-11319,amount_in_cents,Amount sent in cents,447.56,"store 56.51, platform 5651.00"
+JS-11321,amount_in_cents,Amount sent in cents,844.35,"store 106.61, platform 10661.00"
+JS-11322,amount_in_cents,Amount sent in cents,599.39,"store 75.68, platform 7568.00"
+JS-11323,conversion_missing,Sale never reached the platform,-9.16,order has a click ID but never reached the platform
+JS-11324,amount_in_cents,Amount sent in cents,235.54,"store 40.74, platform 4074.00"
+JS-11324,currency_mismatch,Wrong currency sent,0.88,"store CAD, platform USD"
+JS-11326,amount_in_cents,Amount sent in cents,1872.92,"store 236.48, platform 23648.00"
+JS-11327,amount_in_cents,Amount sent in cents,666.78,"store 84.19, platform 8419.00"
+JS-11328,amount_in_cents,Amount sent in cents,295.97,"store 37.37, platform 3737.00"
+JS-11328,refund_not_reversed,Refunds not reported,1.49,"refunded 18.68 in the store, 0.00 reported"
+JS-11329,amount_in_cents,Amount sent in cents,666.71,"store 84.18, platform 8418.00"
+JS-11330,amount_in_cents,Amount sent in cents,1418.71,"store 179.13, platform 17913.00"
+JS-11331,amount_in_cents,Amount sent in cents,1343.71,"store 169.66, platform 16966.00"
+JS-11331,refund_not_reversed,Refunds not reported,6.79,"refunded 84.83 in the store, 0.00 reported"
+JS-11332,amount_in_cents,Amount sent in cents,403.44,"store 50.94, platform 5094.00"
+JS-11333,click_id_lost,Click ID lost before checkout,-2.98,"partner traffic, but the order has no click ID"
+JS-11334,amount_in_cents,Amount sent in cents,272.76,"store 34.44, platform 3444.00"
+JS-11335,click_id_lost,Click ID lost before checkout,-5.44,"partner traffic, but the order has no click ID"
+JS-11337,click_id_lost,Click ID lost before checkout,-10.62,"partner traffic, but the order has no click ID"
+JS-11338,amount_in_cents,Amount sent in cents,261.12,"store 32.97, platform 3297.00"
+JS-11340,click_id_lost,Click ID lost before checkout,-25.85,"partner traffic, but the order has no click ID"
+JS-11341,amount_in_cents,Amount sent in cents,706.86,"store 122.26, platform 12226.00"
+JS-11341,currency_mismatch,Wrong currency sent,2.64,"store CAD, platform USD"
+JS-11342,amount_in_cents,Amount sent in cents,298.03,"store 37.63, platform 3763.00"
+JS-11343,amount_in_cents,Amount sent in cents,312.21,"store 39.42, platform 3942.00"
+JS-11344,amount_in_cents,Amount sent in cents,311.26,"store 39.30, platform 3930.00"
+JS-11345,amount_in_cents,Amount sent in cents,777.03,"store 98.11, platform 9811.00"
+JS-11346,amount_in_cents,Amount sent in cents,752.08,"store 94.96, platform 9496.00"
+JS-11346,refund_not_reversed,Refunds not reported,3.8,"refunded 47.48 in the store, 0.00 reported"
+JS-11347,amount_in_cents,Amount sent in cents,547.46,"store 94.69, platform 9469.00"
+JS-11347,currency_mismatch,Wrong currency sent,2.05,"store CAD, platform USD"
+JS-11348,amount_in_cents,Amount sent in cents,625.6,"store 78.99, platform 7899.00"
+JS-11349,amount_in_cents,Amount sent in cents,1259.83,"store 159.07, platform 15907.00"
+JS-11350,amount_in_cents,Amount sent in cents,654.9,"store 82.69, platform 8269.00"
+JS-11351,amount_in_cents,Amount sent in cents,942.64,"store 119.02, platform 11902.00"
+JS-11352,conversion_missing,Sale never reached the platform,-7.34,order has a click ID but never reached the platform
+JS-11353,amount_in_cents,Amount sent in cents,714.46,"store 90.21, platform 9021.00"
+JS-11354,amount_in_cents,Amount sent in cents,2534.32,"store 319.99, platform 31999.00"
+JS-11355,amount_in_cents,Amount sent in cents,603.74,"store 76.23, platform 7623.00"
+JS-11356,amount_in_cents,Amount sent in cents,314.34,"store 39.69, platform 3969.00"
+JS-11357,amount_in_cents,Amount sent in cents,366.06,"store 46.22, platform 4622.00"
+JS-11357,refund_not_reversed,Refunds not reported,3.7,"refunded 46.22 in the store, 0.00 reported"
+JS-11358,amount_in_cents,Amount sent in cents,388.08,"store 49.00, platform 4900.00"
+JS-11360,amount_in_cents,Amount sent in cents,921.81,"store 116.39, platform 11639.00"
+JS-11361,amount_in_cents,Amount sent in cents,592.26,"store 74.78, platform 7478.00"
+JS-11362,conversion_missing,Sale never reached the platform,-6.64,order has a click ID but never reached the platform
+JS-11363,amount_in_cents,Amount sent in cents,766.18,"store 96.74, platform 9674.00"
+JS-11364,amount_in_cents,Amount sent in cents,646.43,"store 81.62, platform 8162.00"
+JS-11366,amount_in_cents,Amount sent in cents,125.0,"store 21.62, platform 2162.00"
+JS-11366,currency_mismatch,Wrong currency sent,0.47,"store CAD, platform USD"
+JS-11367,amount_in_cents,Amount sent in cents,452.94,"store 57.19, platform 5719.00"
+JS-11369,amount_in_cents,Amount sent in cents,1122.34,"store 141.71, platform 14171.00"
+JS-11370,amount_in_cents,Amount sent in cents,296.68,"store 37.46, platform 3746.00"
+JS-11371,amount_in_cents,Amount sent in cents,891.16,"store 112.52, platform 11252.00"
+JS-11372,amount_in_cents,Amount sent in cents,332.56,"store 41.99, platform 4199.00"
+JS-11373,amount_in_cents,Amount sent in cents,148.58,"store 18.76, platform 1876.00"
+JS-11373,refund_not_reversed,Refunds not reported,0.75,"refunded 9.38 in the store, 0.00 reported"
+JS-11374,amount_in_cents,Amount sent in cents,417.3,"store 52.69, platform 5269.00"
+JS-11375,conversion_missing,Sale never reached the platform,-10.43,order has a click ID but never reached the platform
+JS-11376,amount_in_cents,Amount sent in cents,1664.07,"store 210.11, platform 21011.00"
+JS-11377,amount_in_cents,Amount sent in cents,813.7,"store 102.74, platform 10274.00"
+JS-11378,amount_in_cents,Amount sent in cents,2075.28,"store 262.03, platform 26203.00"
+JS-11379,amount_in_cents,Amount sent in cents,332.88,"store 42.03, platform 4203.00"
+JS-11380,amount_in_cents,Amount sent in cents,522.56,"store 65.98, platform 6598.00"
+JS-11381,amount_in_cents,Amount sent in cents,715.81,"store 90.38, platform 9038.00"
+JS-11382,conversion_missing,Sale never reached the platform,-5.02,order has a click ID but never reached the platform
+JS-11383,conversion_missing,Sale never reached the platform,-13.15,order has a click ID but never reached the platform
+JS-11384,amount_in_cents,Amount sent in cents,688.25,"store 86.90, platform 8690.00"
+JS-11385,amount_in_cents,Amount sent in cents,1045.84,"store 132.05, platform 13205.00"
+JS-11386,click_id_lost,Click ID lost before checkout,-5.5,"partner traffic, but the order has no click ID"
+JS-11387,conversion_missing,Sale never reached the platform,-3.92,order has a click ID but never reached the platform
+JS-11388,amount_in_cents,Amount sent in cents,718.6,"store 124.29, platform 12429.00"
+JS-11388,currency_mismatch,Wrong currency sent,2.68,"store CAD, platform USD"
+JS-11390,amount_in_cents,Amount sent in cents,200.79,"store 34.73, platform 3473.00"
+JS-11390,currency_mismatch,Wrong currency sent,0.75,"store CAD, platform USD"
+JS-11391,amount_in_cents,Amount sent in cents,463.16,"store 58.48, platform 5848.00"
+JS-11392,amount_in_cents,Amount sent in cents,1023.82,"store 129.27, platform 12927.00"
+JS-11394,amount_in_cents,Amount sent in cents,1064.84,"store 134.45, platform 13445.00"
+JS-11395,amount_in_cents,Amount sent in cents,252.96,"store 31.94, platform 3194.00"
+JS-11396,conversion_missing,Sale never reached the platform,-14.07,order has a click ID but never reached the platform
+JS-11397,amount_in_cents,Amount sent in cents,934.48,"store 117.99, platform 11799.00"
+JS-11398,amount_in_cents,Amount sent in cents,235.86,"store 29.78, platform 2978.00"
+JS-11399,amount_in_cents,Amount sent in cents,245.52,"store 31.00, platform 3100.00"
+JS-11400,amount_in_cents,Amount sent in cents,917.22,"store 115.81, platform 11581.00"
+JS-11401,amount_in_cents,Amount sent in cents,511.38,"store 88.45, platform 8845.00"
+JS-11401,currency_mismatch,Wrong currency sent,1.91,"store CAD, platform USD"
+JS-11402,amount_in_cents,Amount sent in cents,327.49,"store 41.35, platform 4135.00"
+JS-11403,amount_in_cents,Amount sent in cents,366.85,"store 46.32, platform 4632.00"
+JS-11404,amount_in_cents,Amount sent in cents,497.38,"store 62.80, platform 6280.00"
+JS-11406,amount_in_cents,Amount sent in cents,540.12,"store 93.42, platform 9342.00"
+JS-11406,currency_mismatch,Wrong currency sent,2.02,"store CAD, platform USD"
+JS-11407,amount_in_cents,Amount sent in cents,191.51,"store 24.18, platform 2418.00"
+JS-11408,amount_in_cents,Amount sent in cents,768.79,"store 97.07, platform 9707.00"
+JS-11410,click_id_lost,Click ID lost before checkout,-11.68,"partner traffic, but the order has no click ID"
+JS-11411,conversion_missing,Sale never reached the platform,-3.69,order has a click ID but never reached the platform
+JS-11412,amount_in_cents,Amount sent in cents,804.91,"store 101.63, platform 10163.00"
+JS-11413,amount_in_cents,Amount sent in cents,631.54,"store 79.74, platform 7974.00"
+JS-11415,conversion_missing,Sale never reached the platform,-11.39,order has a click ID but never reached the platform
+JS-11417,amount_in_cents,Amount sent in cents,903.99,"store 114.14, platform 11414.00"
+JS-11419,click_id_lost,Click ID lost before checkout,-6.6,"partner traffic, but the order has no click ID"
+JS-11420,amount_in_cents,Amount sent in cents,245.83,"store 42.52, platform 4252.00"
+JS-11420,currency_mismatch,Wrong currency sent,0.92,"store CAD, platform USD"
+JS-11422,amount_in_cents,Amount sent in cents,462.45,"store 58.39, platform 5839.00"
+JS-11423,amount_in_cents,Amount sent in cents,704.72,"store 121.89, platform 12189.00"
+JS-11423,currency_mismatch,Wrong currency sent,2.63,"store CAD, platform USD"
+JS-11424,amount_in_cents,Amount sent in cents,1349.41,"store 170.38, platform 17038.00"
+JS-11424,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-11425,amount_in_cents,Amount sent in cents,557.17,"store 70.35, platform 7035.00"
+JS-11426,amount_in_cents,Amount sent in cents,400.2,"store 50.53, platform 5053.00"
+JS-11426,refund_not_reversed,Refunds not reported,4.04,"refunded 50.53 in the store, 0.00 reported"
+JS-11426,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-11428,conversion_missing,Sale never reached the platform,-8.38,order has a click ID but never reached the platform
+JS-11429,conversion_missing,Sale never reached the platform,-8.83,order has a click ID but never reached the platform
+JS-11430,amount_in_cents,Amount sent in cents,603.5,"store 76.20, platform 7620.00"
+JS-11432,conversion_missing,Sale never reached the platform,-6.94,order has a click ID but never reached the platform
+JS-11433,amount_in_cents,Amount sent in cents,1085.99,"store 137.12, platform 13712.00"
+JS-11434,amount_in_cents,Amount sent in cents,454.45,"store 57.38, platform 5738.00"
+JS-11435,amount_in_cents,Amount sent in cents,461.82,"store 58.31, platform 5831.00"
+JS-11436,amount_in_cents,Amount sent in cents,656.57,"store 82.90, platform 8290.00"
+JS-11440,amount_in_cents,Amount sent in cents,243.98,"store 42.20, platform 4220.00"
+JS-11440,currency_mismatch,Wrong currency sent,0.91,"store CAD, platform USD"
+JS-11441,amount_in_cents,Amount sent in cents,2449.89,"store 309.33, platform 30933.00"
+JS-11442,amount_in_cents,Amount sent in cents,291.06,"store 36.75, platform 3675.00"
+JS-11444,amount_in_cents,Amount sent in cents,216.22,"store 27.30, platform 2730.00"
+JS-11444,refund_not_reversed,Refunds not reported,2.18,"refunded 27.30 in the store, 0.00 reported"
+JS-11445,amount_in_cents,Amount sent in cents,618.87,"store 78.14, platform 7814.00"
+JS-11446,amount_in_cents,Amount sent in cents,563.9,"store 71.20, platform 7120.00"
+JS-11447,amount_in_cents,Amount sent in cents,973.29,"store 122.89, platform 12289.00"
+JS-11448,validation_error,Requests rejected by the API,-0.0,rejected: invalid_amount
+JS-11450,amount_in_cents,Amount sent in cents,1440.01,"store 181.82, platform 18182.00"
+JS-11451,amount_in_cents,Amount sent in cents,731.81,"store 92.40, platform 9240.00"
+JS-11452,amount_in_cents,Amount sent in cents,684.21,"store 86.39, platform 8639.00"
+JS-11452,refund_not_reversed,Refunds not reported,6.91,"refunded 86.39 in the store, 0.00 reported"
+JS-11453,conversion_missing,Sale never reached the platform,-7.78,order has a click ID but never reached the platform
+JS-11454,amount_in_cents,Amount sent in cents,266.19,"store 33.61, platform 3361.00"
+JS-11456,amount_in_cents,Amount sent in cents,217.88,"store 27.51, platform 2751.00"
+JS-11457,amount_in_cents,Amount sent in cents,652.37,"store 82.37, platform 8237.00"
+JS-11458,amount_in_cents,Amount sent in cents,205.37,"store 25.93, platform 2593.00"
+JS-11459,amount_in_cents,Amount sent in cents,1145.47,"store 144.63, platform 14463.00"
+JS-11462,amount_in_cents,Amount sent in cents,223.34,"store 28.20, platform 2820.00"
+JS-11463,amount_in_cents,Amount sent in cents,770.62,"store 97.30, platform 9730.00"
+JS-11463,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-11464,amount_in_cents,Amount sent in cents,641.44,"store 80.99, platform 8099.00"
+JS-11465,amount_in_cents,Amount sent in cents,362.33,"store 62.67, platform 6267.00"
+JS-11465,currency_mismatch,Wrong currency sent,1.35,"store CAD, platform USD"
+JS-11466,amount_in_cents,Amount sent in cents,236.1,"store 29.81, platform 2981.00"
+JS-11467,amount_in_cents,Amount sent in cents,815.84,"store 103.01, platform 10301.00"
+JS-11468,amount_in_cents,Amount sent in cents,1857.87,"store 234.58, platform 23458.00"
+JS-11468,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-11469,amount_in_cents,Amount sent in cents,1175.88,"store 148.47, platform 14847.00"
+JS-11470,amount_in_cents,Amount sent in cents,905.1,"store 114.28, platform 11428.00"
+JS-11471,amount_in_cents,Amount sent in cents,537.4,"store 92.95, platform 9295.00"
+JS-11471,currency_mismatch,Wrong currency sent,2.01,"store CAD, platform USD"
+JS-11472,amount_in_cents,Amount sent in cents,731.95,"store 126.60, platform 12660.00"
+JS-11472,currency_mismatch,Wrong currency sent,2.73,"store CAD, platform USD"
+JS-11473,amount_in_cents,Amount sent in cents,197.92,"store 24.99, platform 2499.00"
+JS-11476,amount_in_cents,Amount sent in cents,1340.3,"store 169.23, platform 16923.00"
+JS-11477,click_id_lost,Click ID lost before checkout,-5.63,"partner traffic, but the order has no click ID"
+JS-11478,amount_in_cents,Amount sent in cents,273.56,"store 34.54, platform 3454.00"
+JS-11479,amount_in_cents,Amount sent in cents,356.64,"store 45.03, platform 4503.00"
+JS-11482,conversion_missing,Sale never reached the platform,-4.79,order has a click ID but never reached the platform
+JS-11483,amount_in_cents,Amount sent in cents,384.67,"store 48.57, platform 4857.00"
+JS-11484,amount_in_cents,Amount sent in cents,488.95,"store 84.57, platform 8457.00"
+JS-11484,currency_mismatch,Wrong currency sent,1.83,"store CAD, platform USD"
+JS-11485,validation_error,Requests rejected by the API,-0.0,rejected: invalid_amount
+JS-11486,amount_in_cents,Amount sent in cents,340.96,"store 43.05, platform 4305.00"
+JS-11486,duplicate_fire,Tag fires more than once,0.0,reported 2 times; extra copies were dropped
+JS-11487,amount_in_cents,Amount sent in cents,196.42,"store 24.80, platform 2480.00"
+JS-11488,click_id_lost,Click ID lost before checkout,-10.23,"partner traffic, but the order has no click ID"
+JS-11489,conversion_missing,Sale never reached the platform,-3.56,order has a click ID but never reached the platform
+JS-11490,amount_in_cents,Amount sent in cents,411.3,"store 71.14, platform 7114.00"
+JS-11490,currency_mismatch,Wrong currency sent,1.54,"store CAD, platform USD"
+JS-11491,amount_in_cents,Amount sent in cents,416.62,"store 72.06, platform 7206.00"
+JS-11491,currency_mismatch,Wrong currency sent,1.56,"store CAD, platform USD"
+JS-11492,amount_in_cents,Amount sent in cents,309.28,"store 39.05, platform 3905.00"
+JS-11493,conversion_missing,Sale never reached the platform,-6.49,order has a click ID but never reached the platform
+JS-11494,amount_in_cents,Amount sent in cents,162.04,"store 20.46, platform 2046.00"
+JS-11495,amount_in_cents,Amount sent in cents,383.38,"store 66.31, platform 6631.00"
+JS-11495,currency_mismatch,Wrong currency sent,1.43,"store CAD, platform USD"
+JS-11496,amount_in_cents,Amount sent in cents,540.38,"store 68.23, platform 6823.00"
+JS-11497,amount_in_cents,Amount sent in cents,360.44,"store 45.51, platform 4551.00"
+JS-11498,amount_in_cents,Amount sent in cents,159.03,"store 20.08, platform 2008.00"
+JS-11501,amount_in_cents,Amount sent in cents,1334.68,"store 168.52, platform 16852.00"
+JS-11501,refund_not_reversed,Refunds not reported,13.48,"refunded 168.52 in the store, 0.00 reported"
+JS-11502,amount_in_cents,Amount sent in cents,792.95,"store 100.12, platform 10012.00"

@@ -1,0 +1,10 @@
+issue,title,orders,sales_usd,commission_impact_usd,needs_fix,fix
+amount_in_cents,Amount sent in cents,158,13070.36,103517.2,True,"Divide the amount by 100 before sending it, so it's in the currency's main unit."
+conversion_missing,Sale never reached the platform,79,6698.93,-535.84,True,"Add server-to-server reporting from the store's backend, which doesn't depend on the shopper's browser."
+click_id_lost,Click ID lost before checkout,71,6337.63,-506.99,True,"Keep the clickid parameter on every redirect, and save it in a first-party cookie or local storage on the first page the shopper sees."
+refund_not_reversed,Refunds not reported,63,5198.83,319.84,True,Call the reversal endpoint whenever an order is fully or partly refunded.
+currency_mismatch,Wrong currency sent,148,8854.08,261.98,True,Send the order's own currency code on every conversion.
+test_order,Test orders sent to production,3,203.8,16.31,True,"Use the test key while testing, and skip reporting for orders marked as tests."
+validation_error,Requests rejected by the API,5,0.0,0.0,True,Correct the field named in the error and resend.
+duplicate_fire,Tag fires more than once,29,2151.69,0.0,False,"Always send the real order_id so the platform can drop duplicates, and fire the tag only once per order."
+late_conversion,Sale outside the lookback window,4,657.04,0.0,False,"Nothing is broken. If the brand wants to credit longer journeys, the lookback window can be changed in the program settings."
